@@ -1,0 +1,25 @@
+/*
+Theme Name: Bedrock
+Theme URI: http://github.com/natehefner/bedrock
+Description: A modern WordPress Starter Theme
+Author: Nathan Hefner
+Author URI: www.nhefner.com
+Version: 1.0
+Tags: responsive, modern, minimal
+
+License: MIT License
+License URI: http://opensource.org/licenses/MIT
+
+A simple and modern WordPress starter theme.
+*/
+
+/*** Import Libs ***/
+
+@import "bedrock/css/libs/bootstrap.css";
+
+/*** Import Custom ***/
+
+@import "bedrock/css/general.css";
+@import "bedrock/css/home.css";
+@import "bedrock/css/page.css";
+@import "bedrock/css/sidebar.css";
