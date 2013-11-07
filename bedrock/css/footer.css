@@ -1,0 +1,24 @@
+/*
+ * Footer Styles
+ */
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer p {
+
+}
+
+.footer a {
+  color: #999999;
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
+
+.footer .copyright {
+  margin: 15px 0px 15px;
+}
