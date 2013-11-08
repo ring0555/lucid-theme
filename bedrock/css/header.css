@@ -5,6 +5,8 @@
 /** GENERAL HEADER STYLES **/
 
 .header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #CCCCCC;
   font-family: 'RBNo2', 'Open Sans', sans-serif;
   font-size: 24px;
   padding: 10px;
