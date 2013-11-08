@@ -14,6 +14,9 @@
 
 /** BASE TEMPLATE CLASSES **/
 
+.content {
+  padding-top: 110px;
+}
 
 /** BOOTSTRAP OVERRIDES **/
 

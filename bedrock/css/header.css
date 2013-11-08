@@ -5,13 +5,16 @@
 /** GENERAL HEADER STYLES **/
 
 .header {
+  position: fixed !important;
+  width: 100%;
+  height: 90px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #CCCCCC;
   font-family: 'RBNo2', 'Open Sans', sans-serif;
   font-size: 24px;
-  padding: 10px;
-  margin-bottom: 20px;
   text-transform: uppercase;
+  padding-top: 10px;
+  z-index: 10000;
 }
 
 .header a {
@@ -26,14 +29,95 @@
 .header .title {
   text-align: center;
   float: left;
+  margin-left: 80px;
 }
 
 .header .title img {
   height: 70px;
 }
 
-.header .navigation {
+.navigation {
   text-align: center;
   margin-top: 10px;
+  margin-right: 80px;
   float: right;
 }
+
+
+.nav-button {
+  display: none;
+}
+
+.nav-lines > li {
+  float: left;
+}
+
+.nav-lines > li > a {
+
+}
+
+.nav-lines > li + li {
+  margin-left: 2px;
+}
+
+.nav-lines > li > a:hover,
+.nav-lines > li > a:focus {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.nav-lines > li.active > a,
+.nav-lines > li.active > a:hover,
+.nav-lines > li.active > a:focus {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .header .title {
+    margin-left: 30px;
+  }
+
+  .navigation {
+    margin-right: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+
+  .header .title {
+    margin-left: 10px;
+  }
+
+  .nav-button {
+    display: block;
+    float: right;
+    margin: 10px 15px 0px 0px;
+  }
+
+  .nav-lines li {
+    float: none;
+    display: none;
+  }
+
+  .navigation.open {
+    text-align: left;
+    float: none;
+    width: 100%;
+    margin: 80px 0px 0px;
+    background-color: #FFF;
+    padding: 0px;
+  }
+
+  .nav-lines.open li {
+    line-height: 14px;
+    display: block;
+    padding: 3px 10px;
+    margin: 0px;
+  }
+
+}
+
+

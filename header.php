@@ -26,16 +26,20 @@
   <body>
 
   <div class="header">
-    <div class="container">
       <div class="title">
         <a href="<?php bloginfo('url'); ?>">
           <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/title.png">
         </a>
       </div>
+      <button type="button" class="btn btn-default btn-lg nav-button">
+        <span class="glyphicon glyphicon-th"></span>
+      </button>
       <div class="navigation">
-        <ul class="nav nav-pills">
-          <?php wp_list_pages(array('title_li' => '')); ?>
+        <ul class="nav nav-lines">
+          <?php $front = get_option('page_on_front'); ?>
+          <?php wp_list_pages('exclude='. $front .'&title_li='); ?>
         </ul>
       </div>
-    </div>
   </div>
+
+  <div class="content">
