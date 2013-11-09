@@ -11,11 +11,20 @@
 
 /** UTILITY CLASSES **/
 
-
 /** BASE TEMPLATE CLASSES **/
 
 .content {
-  padding-top: 110px;
+  padding-top: 90px;
+}
+
+.divider {
+  width: 80%;
+  border: 1px solid #CCCCCC;
+  margin: 40px auto;
+}
+
+.heading {
+  text-transform: uppercase;
 }
 
 /** BOOTSTRAP OVERRIDES **/
@@ -23,7 +32,7 @@
 body {
   background-color: #F8F8F8;
   color: #999999;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 300;
 }
 

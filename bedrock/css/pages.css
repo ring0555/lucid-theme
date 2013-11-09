@@ -1,0 +1,68 @@
+/*
+ * CSS for Page Templates
+ */
+
+
+/* Front Page */
+
+.jumbotron {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  background-image: url('../img/jumbotron.jpg');
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+.jumbotron h1 {
+  font-size: 44px;
+  color: #FFFFFF;
+}
+
+.jumbotron h2 {
+  color: #FFFFFF;
+}
+
+.process {
+  text-align: center;
+}
+
+.process h2 {
+  text-transform: uppercase;
+}
+
+.process img {
+  text-align: center;
+  margin: 30px auto 0px;
+  max-height: 260px;
+}
+
+.services {
+  text-align: center;
+}
+
+.services h2 {
+  text-align: center;
+}
+
+.letswork {
+  text-align: center;
+}
+
+.letswork .btn-default {
+  margin-top: 20px;
+  background-color: #F8F8F8;
+  width: 40%;
+  font-size: 24px;
+  color: #999999;
+}
+
+.letswork .btn-default:hover,
+.letswork .btn-default:focus,
+.letswork .btn-default:active,
+.letswork .btn-default.active {
+  color: #999999;
+  background-color: #F8F8F8;
+  border: 2px solid #7bc0c6;
+}

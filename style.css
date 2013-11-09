@@ -16,13 +16,13 @@ A simple and modern WordPress starter theme.
 /*** Import Libs ***/
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(http://fonts.googleapis.com/css?family=Abel);
 @import "bedrock/css/libs/bootstrap.css";
 
 /*** Import Custom ***/
 
 @import "bedrock/css/general.css";
 @import "bedrock/css/header.css";
-@import "bedrock/css/home.css";
-@import "bedrock/css/page.css";
+@import "bedrock/css/pages.css";
 @import "bedrock/css/sidebar.css";
 @import "bedrock/css/footer.css";
