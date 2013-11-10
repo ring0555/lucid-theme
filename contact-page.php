@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
       $body .= 'Type: '.$_POST['projectType']."\r\n";
       $body .= 'Budget: '.$_POST['budget']."\r\n";
       $body .= 'Timeline: '.$_POST['timeline']."\r\n";
+      $body .= "\r\n";
       $body .= $visitormessage;
 
       $sent = wp_mail($to, $subject, $body, $headers);
