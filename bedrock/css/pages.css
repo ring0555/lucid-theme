@@ -66,3 +66,9 @@
   background-color: #F8F8F8;
   border: 2px solid #7bc0c6;
 }
+
+/* Contact Page */
+
+.contact-form label {
+  font-size: 16px;
+}
