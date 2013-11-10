@@ -25,14 +25,14 @@ if (isset($_POST['submit'])) {
     } else {
       $to = get_option('admin_email');
       $subject = 'Lucid Studios Visitor Message';
-      $headers = 'From: '. $_POST['emailAddress'];
-      $body = 'Name: '.$_POST['contactName'];
-      $body .= 'Phone: '.$_POST['phoneNumber'];
-      $body .= 'Company: '.$_POST['companyName'];
-      $body .= 'Type: '.$_POST['projectType'];
-      $body .= 'Budget: '.$_POST['budget'];
-      $body .= 'Timeline: '.$_POST['timeline'];
-      $body .= $_POST['message'];
+      $headers = 'From: '.$emailaddress;
+      $body = 'Name: '.$contactname.'<br/>';
+      $body .= 'Phone: '.$phonenumber.'<br/>';
+      $body .= 'Company: '.$companyname.'<br/>';
+      $body .= 'Type: '.$_POST['projectType'].'<br/>';
+      $body .= 'Budget: '.$_POST['budget'].'<br/>';
+      $body .= 'Timeline: '.$_POST['timeline'].'<br/>';
+      $body .= $visitormessage;
 
       $sent = wp_mail($to, $subject, $body, $headers);
 
