@@ -4,7 +4,9 @@
 
   <div class="posts">
 
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+  <?php if (have_posts()) : ?>
+  <?php query_posts('category_name=Journal'); ?>
+  <?php while ( have_posts() ) : the_post(); ?>
 
     <div class="post">
 
@@ -18,10 +20,7 @@
 
     </div>
 
-  <?php endwhile; else: ?>
-
-    <h1><?php _e('Sorry, there are no posts to show.'); ?></h1>
-
+  <?php endwhile; ?>
   <?php endif; ?>
 
   </div>
