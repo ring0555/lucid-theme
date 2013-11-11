@@ -69,7 +69,7 @@
 
 /* Journal Page */
 
-.posts {
+.posts, .single-post {
   width: 70%;
   margin: 0px auto;
 }
@@ -86,7 +86,8 @@
   font-size: 16px;
 }
 
-.post .summary {
+.post .summary,
+.post .post-content {
   font-size: 20px;
 }
 

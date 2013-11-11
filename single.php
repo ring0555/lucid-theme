@@ -2,35 +2,21 @@
 
 <div class="container">
 
-  <div class="row">
+  <div class="single-post post">
 
-    <div class="col-lg-9">
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-      <div class="single-post">
+      <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+      <h5 class="date"><?php the_time('l, F jS, Y'); ?></h5>
 
-        <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+      <div class="post-content"><?php the_content(); ?></div>
 
-        <h5 class="date text-muted"><?php the_time('l, F jS, Y'); ?></h5>
+    <?php endwhile; else: ?>
 
-        <?php the_content(); ?>
+      <?php _e('Sorry, this page does not exist'); ?>
 
-      <?php endwhile; else: ?>
-
-        <?php _e('Sorry, this page does not exist'); ?>
-
-      <?php endif; ?>
-
-      </div>
-
-    </div>
-
-    <div class="col-lg-3">
-
-      <?php get_sidebar(); ?>
-
-    </div>
+    <?php endif; ?>
 
   </div>
 
