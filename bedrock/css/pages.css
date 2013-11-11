@@ -95,6 +95,35 @@
   font-size: 16px;
 }
 
+/* Work Page */
+
+.work {
+  margin: 30px 0px 0px;
+  padding: 15px 0px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.work .title {
+  font-size: 30px;
+}
+
+.work img {
+  width: 100%;
+  border: 1px solid #AAAAAA;
+}
+
+.work .summary {
+  font-size: 20px;
+}
+
+.work .url {
+  font-size: 16px;
+}
+
 /* Contact Page */
 
 .contact-form label {
