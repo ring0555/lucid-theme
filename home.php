@@ -10,12 +10,11 @@
 
       <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-      <h5 class="date text-muted"><?php the_time('l, F jS, Y'); ?></h5>
+      <h5 class="date"><?php the_time('l, F jS, Y'); ?></h5>
 
-      <?php the_content(); ?>
+      <div class="summary"><?php the_content(); ?></div>
 
-      <a href="<?php the_permalink(); ?>" class="btn btn-default btn-xs">
-        View Post</a>
+      <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
 
     </div>
 

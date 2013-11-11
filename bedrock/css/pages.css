@@ -67,6 +67,33 @@
   border: 2px solid #7bc0c6;
 }
 
+/* Journal Page */
+
+.posts {
+  width: 70%;
+  margin: 0px auto;
+}
+
+.post {
+  margin-top: 30px;
+}
+
+.post .title {
+  font-size: 40px;
+}
+
+.post .date {
+  font-size: 16px;
+}
+
+.post .summary {
+  font-size: 20px;
+}
+
+.post .readmore {
+  font-size: 16px;
+}
+
 /* Contact Page */
 
 .contact-form label {
