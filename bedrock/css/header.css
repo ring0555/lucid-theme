@@ -79,6 +79,9 @@
     margin-left: 30px;
   }
 
+  .header .title img {
+    height: 60px;
+  }
   .navigation {
     margin-right: 30px;
   }
@@ -88,7 +91,12 @@
 @media only screen and (min-width: 0px) and (max-width: 767px) {
 
   .header .title {
+    margin-top: 10px;
     margin-left: 10px;
+  }
+
+  .header .title img {
+    height: 50px;
   }
 
   .nav-button {
