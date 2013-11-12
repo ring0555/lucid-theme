@@ -105,8 +105,8 @@ if (isset($_POST['submit'])) {
       <select id="timeline" name="timeline" class="form-control">
         <option>2-4 Months</option>
         <option>4-6 Months</option>
-        <option>None</option>
         <option>Anytime</option>
+        <option>None</option>
       </select>
     </div>
     <div class="form-group">
