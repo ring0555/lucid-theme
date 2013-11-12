@@ -22,8 +22,8 @@
 
           <div class="col-sm-6">
 
-            <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') ); ?>
-            <img src="<?php echo $url; ?>">
+            <?php $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') ); ?>
+            <img src="<?php echo $image; ?>">
 
           </div>
 
