@@ -82,12 +82,22 @@
   font-size: 40px;
 }
 
+.post .author,
 .post .date {
   font-size: 16px;
 }
 
+.post .author {
+  margin-left: 10px;
+}
+
+.post .date {
+  margin-right: 12px;
+}
+
 .post .summary,
 .post .post-content {
+  margin-top: 15px;
   font-size: 20px;
 }
 

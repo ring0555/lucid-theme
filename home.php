@@ -12,7 +12,8 @@
 
       <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-      <h5 class="date"><?php the_time('l, F jS, Y'); ?></h5>
+      <h5><span class="date"><?php the_time('l, F jS, Y'); ?></span>&loz;<span class="author">
+        By: <?php the_author(); ?></h5>
 
       <div class="summary"><?php the_content(); ?></div>
 
