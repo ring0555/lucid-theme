@@ -33,7 +33,8 @@
 
             <div class="summary"><?php the_content(); ?></div>
 
-            <a class="btn btn-default btn-sm url" href="http://<?php echo $url; ?>" target="_blank">View Project</a>
+            <a class="btn btn-default btn-sm url" href="http://<?php echo $url; ?>" target="_blank">
+              View Project</a>
 
           </div>
 
