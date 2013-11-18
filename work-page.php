@@ -20,14 +20,14 @@
 
         <div class="row work">
 
-          <div class="col-sm-6">
+          <div class="col-md-6">
 
             <?php $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') ); ?>
             <img src="<?php echo $image; ?>">
 
           </div>
 
-          <div class="col-sm-6">
+          <div class="col-md-6">
 
             <h1 class="title"><a href="http://<?php echo $url; ?>"><?php the_title(); ?></a></h1>
 
