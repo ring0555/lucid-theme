@@ -15,9 +15,7 @@
       <h5><span class="date"><?php the_time('l, F jS, Y'); ?></span>&loz;<span class="author">
         By: <?php the_author(); ?></h5>
 
-      <div class="summary"><?php the_content(); ?></div>
-
-      <a href="<?php the_permalink(); ?>" class="readmore">Read More</a>
+      <div class="summary"><?php the_content('Read More'); ?></div>
 
     </div>
 
