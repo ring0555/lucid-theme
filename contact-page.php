@@ -9,7 +9,6 @@ if (isset($_POST['submit'])) {
 
   $contactname = trim($_POST['contactName']);
   $emailaddress = trim($_POST['emailAddress']);
-  $phonenumber = trim($_POST['phoneNumber']);
   $companyname = trim($_POST['companyName']);
   $visitormessage = trim($_POST['visitorMessage']);
 
@@ -27,7 +26,6 @@ if (isset($_POST['submit'])) {
       $subject = 'Lucid Studios Visitor Message';
       $headers = 'From: '.$emailaddress;
       $body = 'Name: '.$contactname."\r\n";
-      $body .= 'Phone: '.$phonenumber."\r\n";
       $body .= 'Company: '.$companyname."\r\n";
       $body .= "\r\n";
       $body .= $visitormessage;
@@ -74,16 +72,11 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber"
-                  value="<?php echo $phonenumber; ?>">
+                <label for="companyName">Company:</label>
+                <input type="text" class="form-control" id="companyName" name="companyName"
+                  value="<?php echo $companyname; ?>">
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="companyName">Company:</label>
-            <input type="text" class="form-control" id="companyName" name="companyName"
-              value="<?php echo $companyname; ?>">
           </div>
           <div class="form-group">
             <label for="visitorMessage">Message*:</label>
