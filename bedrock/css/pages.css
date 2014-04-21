@@ -10,18 +10,34 @@
   text-align: center;
   width: 100%;
   height: 400px;
-  background-image: url('../img/jumbotron.jpg');
-  background-repeat: no-repeat;
-  padding-top: 100px;
+  background-color: #7abfc5;
+}
+
+.jumbotron .arrow-left {
+  float: left;
+  color: #fff;
+  font-size: 30px;
+  margin-top: 90px;
+  cursor: pointer;
+}
+
+.jumbotron .arrow-right {
+  float: right;
+  color: #fff;
+  font-size: 30px;
+  margin-top: 90px;
+  cursor: pointer;
 }
 
 .jumbotron h1 {
   font-size: 44px;
-  color: #FFFFFF;
+  color: #fff;
 }
 
-.jumbotron h2 {
-  color: #FFFFFF;
+.jumbotron img {
+  display: block;
+  margin: 0px auto;
+  height: 200px;
 }
 
 .process {

@@ -1,67 +1,25 @@
 <?php get_header(); ?>
 
 <div class="jumbotron">
-
-  <h2>Developing</h2>
-  <h1>High End Applications</h1>
-  <h2>For the Web and Mobile</h2>
-
+  <div class="container">
+    <div class="arrow-left"><span class="glyphicon glyphicon-chevron-left"></span></div>
+    <div class="arrow-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
+    <div class="slide show" data-slide="1">
+      <img class="img-responsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/design.png">
+      <h1>Design</h1>
+    </div>
+    <div class="slide hidden" data-slide="2">
+      <img class="img-resonsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/develop.png">
+      <h1>Develop</h1>
+    </div>
+    <div class="slide hidden" data-slide="3">
+      <img class="img-resonsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/deploy.png">
+      <h1>Deploy</h1>
+    </div>
+  </div>
 </div>
-
 <div class="container">
 
-  <div class="process">
-    <h2 class="heading">The Process</h2>
-    <div class="row">
-      <div class="col-xs-4">
-        <img class="img-responsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/design-icon.png">
-        <h3>Design</h3>
-      </div>
-      <div class="col-xs-4">
-        <img class="img-responsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/code-icon.png">
-        <h3>Develop</h3>
-      </div>
-      <div class="col-xs-4">
-        <img class="img-responsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/server-icon.png">
-        <h3>Deploy</h3>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider"/>
-
-  <div class="services">
-    <h2 class="heading">Our Services</h2>
-    <div class="row">
-      <div class="col-sm-4">
-        <h3>Web Design</h3>
-      </div>
-      <div class="col-sm-4">
-        <h3>Web Development</h3>
-      </div>
-      <div class="col-sm-4">
-        <h3>Android Development</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <h3>Scalability and Performance</h3>
-      </div>
-      <div class="col-sm-4">
-        <h3>Code Review</h3>
-      </div>
-      <div class="col-sm-4">
-        <h3>Software Packages</h3>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider"/>
-
-  <div class="letswork">
-    <h2 class="heading">Let's Work</h2>
-    <a href="<?php bloginfo('url'); ?>/contact/" class="btn btn-default">Contact Us</a>
-  </div>
 
 </div>
 

@@ -28,7 +28,7 @@
   <div class="header">
       <div class="title">
         <a href="<?php bloginfo('url'); ?>">
-          <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/title.png">
+          <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/title-white.png">
         </a>
       </div>
       <button type="button" class="btn btn-default btn-lg nav-button">

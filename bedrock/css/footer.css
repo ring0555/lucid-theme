@@ -7,12 +7,14 @@
   margin-top: 30px;
 }
 
-.footer p {
-  font-size: 15px;
+.footer img {
+  height: 18px;
+  margin-top: -3px;
 }
 
 .footer a {
   color: #999999;
+  font-size: 15px;
 }
 
 .footer a:hover {

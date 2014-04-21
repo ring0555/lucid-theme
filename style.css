@@ -15,7 +15,7 @@ A simple and modern WordPress starter theme.
 
 /*** Import Libs ***/
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 @import "bedrock/css/libs/bootstrap.css";
 
