@@ -2,25 +2,50 @@
 
 <div class="jumbotron">
   <div class="container">
-    <div class="arrow-left"><span class="glyphicon glyphicon-chevron-left"></span></div>
-    <div class="arrow-right"><span class="glyphicon glyphicon-chevron-right"></span></div>
-    <div class="slide show" data-slide="1">
-      <img class="img-responsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/design.png">
-      <h1>Design</h1>
-    </div>
-    <div class="slide hidden" data-slide="2">
-      <img class="img-resonsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/develop.png">
-      <h1>Develop</h1>
-    </div>
-    <div class="slide hidden" data-slide="3">
-      <img class="img-resonsive" src="<?php bloginfo('template_directory'); ?>/bedrock/img/deploy.png">
-      <h1>Deploy</h1>
+    <div class="tagline">
+      <h2>Developing</h2>
+      <h1>High End Applications</h1>
+      <h2>for the Web and Mobile</h2>
     </div>
   </div>
 </div>
-<div class="container">
 
+<div class="welcome">
+  <div class="container">
+    <h1>Welcome to Lucid Studios</h1>
+    <p>We're a small software shop based in Maryland that specializes in developing high end web and mobile applications.</p>
+  </div>
+</div>
 
+<hr class="divider">
+
+<div class="services">
+  <div class="container">
+    <h1>Our Services</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/web-design.png">
+        <h3>Web Design</h3>
+      </div>
+      <div class="col-md-4">
+        <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/web-dev.png">
+        <h3>Web Development</h3>
+      </div>
+      <div class="col-md-4">
+        <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/mobile-dev.png">
+        <h3>Mobile Development</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="letswork">
+  <div class="container">
+    <h1>Let's Work</h1>
+    <a class="btn btn-default" href="<?php bloginfo('url'); ?>/contact/">Contact Us</a>
+  </div>
 </div>
 
 <?php get_footer(); ?>
