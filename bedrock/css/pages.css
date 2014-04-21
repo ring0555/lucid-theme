@@ -153,6 +153,10 @@
 
 /* Contact Page */
 
+.contact {
+  margin-top: 35px;
+}
+
 .contact-form label {
   font-size: 16px;
 }

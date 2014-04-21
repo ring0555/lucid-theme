@@ -29,9 +29,6 @@ if (isset($_POST['submit'])) {
       $body = 'Name: '.$contactname."\r\n";
       $body .= 'Phone: '.$phonenumber."\r\n";
       $body .= 'Company: '.$companyname."\r\n";
-      $body .= 'Type: '.$_POST['projectType']."\r\n";
-      $body .= 'Budget: '.$_POST['budget']."\r\n";
-      $body .= 'Timeline: '.$_POST['timeline']."\r\n";
       $body .= "\r\n";
       $body .= $visitormessage;
 
@@ -50,70 +47,53 @@ if (isset($_POST['submit'])) {
 <?php get_header(); ?>
 
 <div class="container">
+  <div class="contact">
+    <h1 class="text-center">Let's Work Together</h1>
 
-  <h1 class="heading text-center">Let's Work Together</h1>
+    <?php if (isset($formerror)) { ?>
+      <div class="alert alert-danger"><?php echo $formerror; ?></div>
+    <?php } else if ($success != '') { ?>
+      <div class="alert alert-success"><?php echo $success; ?></div>
+    <?php } ?>
 
-  <?php if (isset($formerror)) { ?>
-    <div class="alert alert-danger"><?php echo $formerror; ?></div>
-  <?php } else if ($success != '') { ?>
-    <div class="alert alert-success"><?php echo $success; ?></div>
-  <?php } ?>
-
-  <form class="contact-form" role="form" action="<?php the_permalink(); ?>" method="post">
-    <div class="form-group">
-      <label for="contactName">Name*:</label>
-      <input type="text" class="form-control" id="contactName" name="contactName"
-        value="<?php echo $contactname; ?>">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <form class="contact-form" role="form" action="<?php the_permalink(); ?>" method="post">
+          <div class="form-group">
+            <label for="contactName">Name*:</label>
+            <input type="text" class="form-control" id="contactName" name="contactName"
+              value="<?php echo $contactname; ?>">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="emailAddress">Email Address*:</label>
+                <input type="email" class="form-control" id="emailAddress" name="emailAddress"
+                  value="<?php echo $emailaddress; ?>">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber"
+                  value="<?php echo $phonenumber; ?>">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="companyName">Company:</label>
+            <input type="text" class="form-control" id="companyName" name="companyName"
+              value="<?php echo $companyname; ?>">
+          </div>
+          <div class="form-group">
+            <label for="visitorMessage">Message*:</label>
+            <textarea id="visitorMessage" name="visitorMessage" class="form-control" rows="3"><?php echo $visitormessage; ?></textarea>
+          </div>
+          <button class="btn btn-default btn-lg" name="submit" type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="emailAddress">Email Address*:</label>
-      <input type="email" class="form-control" id="emailAddress" name="emailAddress"
-        value="<?php echo $emailaddress; ?>">
-    </div>
-    <div class="form-group">
-      <label for="phoneNumber">Phone Number:</label>
-      <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber"
-        value="<?php echo $phonenumber; ?>">
-    </div>
-    <div class="form-group">
-      <label for="companyName">Company:</label>
-      <input type="text" class="form-control" id="companyName" name="companyName"
-        value="<?php echo $companyname; ?>">
-    </div>
-    <div class="form-group">
-      <label for="projectType">Project Type*:</label>
-      <select id="projectType" name="projectType" class="form-control">
-        <option>Web Design</option>
-        <option>Web Development</option>
-        <option>Android Development</option>
-        <option>Scalability and Performance</option>
-        <option>Code Review</option>
-        <option>Software Package</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="budget">Budget*:</label>
-      <select id="budget" name="budget" class="form-control">
-        <option>$5,000 - $15,000</option>
-        <option>$15,000 - $25,000</option>
-        <option>$25,000 - $50,000</option>
-        <option>$50,000+</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="timeline">Timeline*:</label>
-      <select id="timeline" name="timeline" class="form-control">
-        <option>2-4 Months</option>
-        <option>4-6 Months</option>
-        <option>Anytime</option>
-        <option>None</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="visitorMessage">Message*:</label>
-      <textarea id="visitorMessage" name="visitorMessage" class="form-control" rows="3"><?php echo $visitormessage; ?></textarea>
-    </div>
-    <button class="btn btn-default btn-lg" name="submit" type="submit">Send Message</button>
+  </div>
 </div>
 
 <?php get_footer(); ?>
