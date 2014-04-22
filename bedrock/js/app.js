@@ -2,7 +2,13 @@ jQuery(document).ready(function($) {
 
     // Mobile Nav
     $('.nav-button').click(function() {
-      $('.navigation,.nav-lines').toggleClass('open');
+      if ($('.nav-lines').hasClass('open')) {
+        $('.nav-lines').removeClass('open');
+        $('.nav-lines').slideUp();
+      } else {
+        $('.nav-lines').addClass('open');
+        $('.nav-lines').slideDown();
+      }
     });
 
 });
