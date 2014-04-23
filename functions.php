@@ -129,47 +129,47 @@ function Project_url_box_save( $post_id ) {
 }
 
 
-// Project Status Meta Box
+// Project Type Meta Box
 
-add_action( 'add_meta_boxes', 'project_status_box');
+add_action( 'add_meta_boxes', 'project_type_box');
 
-function Project_status_box() {
+function project_type_box() {
   add_meta_box(
-    'project_status_box',
-    __( 'Project Status', 'myplugin_textdomain' ),
-    'project_status_box_content',
+    'project_type_box',
+    __( 'Project Type', 'myplugin_textdomain' ),
+    'project_type_box_content',
     'Project',
     'side',
     'high'
   );
 }
 
-function Project_status_box_content( $post ) {
-  wp_nonce_field( plugin_basename( __FILE__ ), 'project_status_box_content_nonce' );
-  echo '<label for="project_status"></label>';
-  echo '<select id="project_status" name="project_status">';
-  $curr_val = get_post_meta($post->ID, 'project_status', true);
+function project_type_box_content( $post ) {
+  wp_nonce_field( plugin_basename( __FILE__ ), 'project_type_box_content_nonce' );
+  echo '<label for="project_type"></label>';
+  echo '<select id="project_type" name="project_type">';
+  $curr_val = get_post_meta($post->ID, 'project_type', true);
   if (empty($curr_val)) {
-    echo '<option value="published">Published</option>';
-    echo '<option value="comingsoon">Coming Soon</option>';
-  } else if ($curr_val == 'published') {
-    echo '<option selected="selected" value="published">Published</option>';
-    echo '<option value="comingsoon">Coming Soon</option>';
+    echo '<option value="client">Client</option>';
+    echo '<option value="company">Company</option>';
+  } else if ($curr_val == 'client') {
+    echo '<option selected="selected" value="client">Client</option>';
+    echo '<option value="company">Company</option>';
   } else {
-    echo '<option value="published">Published</option>';
-    echo '<option selected="selected" value="comingsoon">Coming Soon</option>';
+    echo '<option value="client">Client</option>';
+    echo '<option selected="selected" value="company">Company</option>';
   }
   echo '</select>';
 }
 
-add_action( 'save_post', 'project_status_box_save' );
+add_action( 'save_post', 'project_type_box_save' );
 
-function Project_status_box_save( $post_id ) {
+function project_type_box_save( $post_id ) {
 
   if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
     return;
 
-  if ( !wp_verify_nonce( $_POST['project_status_box_content_nonce'], plugin_basename( __FILE__ ) ) )
+  if ( !wp_verify_nonce( $_POST['project_type_box_content_nonce'], plugin_basename( __FILE__ ) ) )
     return;
 
   if ( 'page' == $_POST['post_type'] ) {
@@ -180,16 +180,15 @@ function Project_status_box_save( $post_id ) {
     return;
   }
 
-  $project_status = $_POST['project_status'];
-  $cleaned_project_status = str_replace( "<br>", "", $project_status);
-  update_post_meta( $post_id, 'project_status', $cleaned_project_status );
+  $project_type = $_POST['project_type'];
+  $cleaned_project_type = str_replace( "<br>", "", $project_type);
+  update_post_meta( $post_id, 'project_type', $cleaned_project_type );
 
 }
 
-
 // Project Categories
 
-function my_taxonomies_Project() {
+function my_taxonomies_project() {
   $labels = array(
     'name'              => _x( 'Project Categories', 'taxonomy general name' ),
     'singular_name'     => _x( 'Project Category', 'taxonomy singular name' ),
@@ -209,7 +208,9 @@ function my_taxonomies_Project() {
     'hierarchical' => true
   );
 
-  register_taxonomy( 'project_category', 'Project', $args );
+  register_taxonomy( 'project_category', 'project', $args );
 }
+
+add_action( 'init', 'my_taxonomies_project', 0 );
 
 ?>
