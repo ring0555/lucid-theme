@@ -74,6 +74,7 @@
 .post {
   margin-top: 30px;
   background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -180,10 +181,11 @@
   width: 90%;
   margin: 35px auto 0px;
   background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  padding: 5px 25px;
+  padding: 5px 25px 25px;
 }
 
 .contact-form {
