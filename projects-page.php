@@ -1,7 +1,5 @@
 <?php
-/*
-* Template Name: Projects Page
- */
+/* Template Name: Projects Page */
 ?>
 
 <?php get_header(); ?>
@@ -41,8 +39,13 @@
             </div>
             <h4 class="type"><?php echo ucfirst($type); ?> Project</h4>
             <div class="summary"><?php the_content(); ?></div>
-            <a class="btn btn-default btn-sm url" href="http://<?php echo $url; ?>" target="_blank">
-              View Project</a>
+            <?php if (empty($url)) { ?>
+              <a class="btn btn-default btn-sm url disabled" href="#" target="_blank">
+                Coming Soon</a>
+            <?php } else { ?>
+              <a class="btn btn-default btn-sm url" href="http://<?php echo $url; ?>" target="_blank">
+                View Project</a>
+            <?php } ?>
           </div>
         </div>
 
