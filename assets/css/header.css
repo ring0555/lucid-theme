@@ -108,11 +108,15 @@
     margin: 0px 15px 0px 0px;
   }
 
+  .nav-button span {
+    color: #666;
+  }
+
   .navigation {
     text-align: left;
     float: none;
     width: 100%;
-    margin: 80px 0px 0px;
+    margin: 60px 0px 0px;
     background-color: #7abfc5;
     padding: 0px;
   }
