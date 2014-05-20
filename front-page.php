@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <div class="container">
     <div class="tagline">
-      <h2>Developing</h2>
+      <h2 class="top">Developing</h2>
       <h1>High End Applications</h1>
       <h2>for the Web and Mobile</h2>
     </div>
@@ -23,16 +23,16 @@
   <div class="container">
     <h1>Our Services</h1>
     <div class="row">
-      <div class="col-md-4">
-        <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/web-design.png">
+      <div class="col-sm-4">
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/web-design.png">
         <h3>Web Design</h3>
       </div>
-      <div class="col-md-4">
-        <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/web-dev.png">
+      <div class="col-sm-4">
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/web-dev.png">
         <h3>Web Development</h3>
       </div>
-      <div class="col-md-4">
-        <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/mobile-dev.png">
+      <div class="col-sm-4">
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/mobile-dev.png">
         <h3>Mobile Development</h3>
       </div>
     </div>
