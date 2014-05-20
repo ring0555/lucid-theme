@@ -1,6 +1,6 @@
 /*
 Theme Name: Lucid Theme
-Theme URI: http://github.com/natehefner/bedrock
+Theme URI: http://github.com/natehefner/assets
 Description: A modern WordPress Starter Theme
 Author: Nathan Hefner
 Author URI: www.nhefner.com
@@ -17,12 +17,12 @@ A simple and modern WordPress starter theme.
 
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
-@import "bedrock/css/libs/bootstrap.css";
+@import "assets/css/libs/bootstrap.css";
 
 /*** Import Custom ***/
 
-@import "bedrock/css/general.css";
-@import "bedrock/css/header.css";
-@import "bedrock/css/pages.css";
-@import "bedrock/css/sidebar.css";
-@import "bedrock/css/footer.css";
+@import "assets/css/general.css";
+@import "assets/css/header.css";
+@import "assets/css/pages.css";
+@import "assets/css/sidebar.css";
+@import "assets/css/footer.css";
