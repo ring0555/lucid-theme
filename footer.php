@@ -4,19 +4,19 @@
       <div class="row">
         <div class="col-sm-4">
           <a href="mailto:hello@lucidstudios.co" target="_blank">
-            <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/email.png">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/email.png">
             hello@lucidstudios.co
           </a>
         </div>
         <div class="col-sm-4">
           <a href="http://twitter.com/LucidStudiosCo" target="_blank">
-            <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/twitter.png">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/twitter.png">
             LucidStudiosCo
           </a>
         </div>
         <div class="col-sm-4">
           <a href="http://github.com/LucidStudiosCo" target="_blank">
-            <img src="<?php bloginfo('template_directory'); ?>/bedrock/img/github.png">
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/github.png">
             LucidStudiosCo
           </a>
         </div>
@@ -29,8 +29,8 @@
 
   </div> <!-- End Content -->
 
-  <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/bedrock/js/libs/bootstrap.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/bedrock/js/app.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/libs/bootstrap.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/assets/js/app.js"></script>
   <?php wp_footer(); ?>
   </body>
 </html>
