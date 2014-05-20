@@ -12,6 +12,10 @@
   margin-top: -3px;
 }
 
+.footer div {
+  margin-top: 10px;
+}
+
 .footer a {
   color: #999999;
   font-size: 15px;
