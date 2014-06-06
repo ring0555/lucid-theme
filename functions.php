@@ -4,9 +4,11 @@
 /******* Theme Settings *******/
 /******************************/
 
-// Adding support for featured images
+// Add support for featured images
 add_theme_support('post-thumbnails');
 
+// Add support for menus
+add_theme_support( 'menus' );
 
 /*******************************/
 /** Various Utility Functions **/
