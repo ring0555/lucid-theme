@@ -27,16 +27,17 @@
 
   <div class="header">
     <ul class="hidden-xs">
-      <?php wp_list_pages('number=2&title_li='); ?>
-      <li class="logo"><a href="<?php bloginfo('url'); ?>">
-        <img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png">
+      <?php wp_nav_menu( array( 'menu' => 'Menu 1', 'container' => 'False', 'items_wrap' => '%3$s' ) ); ?>
+      <li class="logo"><a href="<?php bloginfo( 'url' ); ?>">
+        <img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/logo.png">
       </a></li>
-      <?php wp_list_pages('number=2&title_li='); ?>
+        <?php wp_nav_menu( array( 'menu' => 'Menu 2', 'container' => 'False', 'items_wrap' => '%3$s' ) ); ?>
     </ul>
     <div class="visible-xs">
-      <img class="title" src="<?php bloginfo('template_directory'); ?>/assets/img/title-white.png">
+      <img class="title" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/title-white.png">
       <ul>
-        <?php wp_list_pages('number=4&title_li='); ?>
+        <?php wp_nav_menu( array( 'menu' => 'Menu 1', 'container' => 'False', 'items_wrap' => '%3$s' ) ); ?>
+        <?php wp_nav_menu( array( 'menu' => 'Menu 2', 'container' => 'False', 'items_wrap' => '%3$s' ) ); ?>
       </ul>
     </div>
   </div>
