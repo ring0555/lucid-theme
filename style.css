@@ -17,12 +17,12 @@ A simple and modern WordPress starter theme.
 
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
-@import "assets/css/libs/bootstrap.css";
+@import "dist/css/vendor.css";
 
 /*** Import Custom ***/
 
+@import "dist/css/custom.css";
 @import "assets/css/general.css";
-@import "assets/css/header.css";
 @import "assets/css/pages.css";
 @import "assets/css/sidebar.css";
 @import "assets/css/footer.css";
