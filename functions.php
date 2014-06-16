@@ -11,6 +11,15 @@ add_theme_support('post-thumbnails');
 add_theme_support( 'menus' );
 
 /*******************************/
+/********* Theme Setup *********/
+/*******************************/
+
+function register_main_menu() {
+  register_nav_menu('main-menu',__( 'Main Menu' ));
+}
+add_action( 'init', 'register_main_menu' );
+
+/*******************************/
 /** Various Utility Functions **/
 /*******************************/
 
@@ -22,7 +31,6 @@ function get_ID_by_slug($page_slug) {
     return null;
   }
 }
-
 
 /******************************/
 /** Custom Project Functions **/
