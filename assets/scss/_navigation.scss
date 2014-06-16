@@ -1,0 +1,27 @@
+.navigation {
+  margin-top: 25%;
+  padding: 10% 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  ul {
+    margin: 5% 9% 0;
+    list-style-type: none;
+
+    li {
+      padding: 10px;
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+}

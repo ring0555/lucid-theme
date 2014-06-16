@@ -1,0 +1,11 @@
+{
+  "name": "lucidtheme",
+  "version": "0.0.0",
+  "dependencies": {
+    "gulp": "~3.6.0",
+    "gulp-sass": "~0.7.1",
+    "gulp-concat": "~2.2.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-imagemin": "~0.2.0"
+  }
+}

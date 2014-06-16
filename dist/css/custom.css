@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+  margin: 0; }
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background-color: #7abfc5; }
+
+.content {
+  position: absolute;
+  right: 0;
+  height: auto;
+  width: 75%; }
+
+.navigation {
+  margin-top: 25%;
+  padding: 10% 0;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase; }
+  .navigation img {
+    width: 80%;
+    display: block;
+    margin: 0 auto; }
+  .navigation ul {
+    margin: 5% 9% 0;
+    list-style-type: none; }
+    .navigation ul li {
+      padding: 10px; }
+      .navigation ul li a {
+        color: #fff; }
