@@ -1,14 +1,19 @@
 jQuery(document).ready(function($) {
 
     // Mobile Nav
-    $('.nav-button').click(function() {
-      if ($('.nav-lines').hasClass('open')) {
-        $('.nav-lines').removeClass('open');
-        $('.nav-lines').slideUp();
+    $('.menu-icon').click(function() {
+      if ($('ul', '.navigation').hasClass('open')) {
+        $('ul', '.navigation').removeClass('open');
+        $('ul', '.navigation').slideUp();
       } else {
-        $('.nav-lines').addClass('open');
-        $('.nav-lines').slideDown();
+        $('ul', '.navigation').addClass('open');
+        $('ul', '.navigation').slideDown();
       }
+    });
+
+    // Mobile Nav
+    $('.menu-icon').click(function() {
+      $('ul', '.navigation').show();
     });
 
 });

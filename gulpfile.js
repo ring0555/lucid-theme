@@ -5,12 +5,10 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
 
 var paths = {
   scripts: 'assets/js/**/*',
   styles: 'assets/scss/**/*',
-  bootstrap: 'assets/bower_components/sass-bootstrap/lib/*',
   images: 'assets/img/**/*'
 };
 
@@ -21,12 +19,14 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('dist/css'));
 });
 
+/*
 gulp.task('vendor-styles', function() {
-  gulp.src(paths.bootstrap)
+  gulp.src()
     .pipe(sass())
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('dist/css'));
 });
+*/
 
 gulp.task('scripts', function() {
   // Minify and copy all JavaScript
@@ -48,4 +48,4 @@ gulp.task('watch', function() {
   gulp.watch(paths.images, ['images']);
 });
 
-gulp.task('default', ['styles', 'vendor-styles', 'scripts', 'images', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'images', 'watch']);

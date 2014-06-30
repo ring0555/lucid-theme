@@ -20,6 +20,8 @@
     <link href="<?php bloginfo( 'stylesheet_url' ); ?>" rel="stylesheet">
 
     <?php wp_enqueue_script('jquery'); ?>
+    <script type="text/javascript" src="//use.typekit.net/jcc0yeh.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     <?php wp_head(); ?>
   </head>
@@ -28,13 +30,28 @@
     <div class="menu">
       <div class="navigation">
         <a href="<?php echo home_url(); ?>">
-          <img class="title" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/title-white.png">
+          <img class="title" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/title-white.png"
+            alt="Lucid Studios Logo">
         </a>
+        <img class="menu-icon" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/menu.png"
+          alt="Menu Icon">
         <ul>
           <?php if ( has_nav_menu( 'main-menu' ) ) { ?>
           <?php wp_nav_menu( array( 'theme-location' => 'main-menu', 'container' => 'False',
             'items_wrap' => '%3$s' ) ); ?>
           <?php } ?>
+        </ul>
+      </div>
+      <div class="footer">
+        <ul>
+          <li><a href="http://github.com/lucidstudiosco">
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/github.png"></a></li>
+          <li><a href="http://twitter.com/lucidstudiosco">
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/twitter.png"></a></li>
+          <li><a href="http://instagram.com/lucidstudiosco">
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/instagram.png"></a></li>
+          <li><a href="mailto:hello@lucidstudios.co">
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/email.png"></a></li>
         </ul>
       </div>
     </div>

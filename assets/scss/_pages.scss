@@ -1,0 +1,204 @@
+#home {
+
+  .slide {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .splash {
+    display: none;
+    text-align: center;
+    padding-top: 15%;
+
+    img {
+      height: 140px;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 30px;
+    }
+
+    button {
+      border: 1px solid #999;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      background-color: transparent;
+      padding: 10px;
+      margin-top: 10px;
+      color: #999;
+      cursor: pointer;
+
+      &:hover, &:focus {
+        border: 1px solid #7bc0c6;
+        color: #7bc0c6;
+      }
+    }
+  }
+
+}
+
+#about {
+
+}
+
+#projects {
+
+  .project {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    overflow: hidden;
+
+    .image {
+      width: 50%;
+      float: left;
+
+      img {
+        width: 95%;
+        text-align: center;
+      }
+    }
+
+    .details {
+      width: 50%;
+      float: left;
+
+      .top {
+        height: 35px;
+
+        h1.title {
+          margin: 5px 0;
+          float: left;
+          color: #7bc0c6;
+        }
+
+        .categories {
+          float: right;
+          margin: 12px 15px 0 0;
+        }
+
+      }
+
+      .type {
+        font-style: italic;
+      }
+    }
+  }
+
+}
+
+#journal {
+
+  .posts {
+    width: 85%;
+    margin: 20px auto;
+
+    .post {
+      width: 100%;
+      overflow: hidden;
+
+      .image {
+        width: 25%;
+        float: left;
+      }
+
+      .description {
+        width: 72%;
+        float: left;
+        padding-left: 2%;
+
+        .top {
+          height: 50px;
+
+          h1 {
+            margin: 0;
+            float: left;
+          }
+
+          h5 {
+            margin: 10px 5px 0 0;
+            float: right;
+          }
+        }
+
+        .summary {
+
+          p {
+            margin: 10px 0 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+#contact {
+  form.contact-form {
+    width: 70%;
+    margin: 20px auto 0;
+
+    input, select, textarea {
+      width: 100%;
+      margin: 15px 0;
+      padding: 10px 5px;
+      background-color: transparent;
+      border-style: solid;
+      border-width: 0 0 1px;
+      font-family: inherit;
+      font-size: 14px;
+      color: #333;
+      border-color: #ccc;
+
+      &:hover, &:focus {
+        border-color: #7bc0c6;
+        color: #999;
+      }
+
+      &:invalid {
+        box-shadow: none;
+        border-color: #ff4136;
+      }
+
+      &:-moz-submit-invalid {
+        box-shadow: none;
+        border-color: #ff4136;
+      }
+
+      &:-moz-ui-invalid {
+        box-shadow:none;
+        border-color: #ff4136;
+      }
+
+      &.sm {
+        width: 47%;
+
+        &.last {
+          float: right;
+          padding-right: 0;
+          margin-right: 0;
+        }
+      }
+
+    }
+
+    button {
+      padding: 15px;
+      background-color: transparent;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      color: #999;
+
+      &:hover, &:focus {
+        cursor: pointer;
+        border-color: #7bc0c6;
+        color: #7bc0c6;
+      }
+    }
+
+  }
+}

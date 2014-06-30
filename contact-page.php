@@ -44,9 +44,12 @@ if (isset($_POST['submit'])) {
 
 <?php get_header(); ?>
 
-<div class="container">
-  <div class="contact">
-    <h1 class="text-center">Let's Work Together</h1>
+  <div class="page-heading">
+    <h1>Contact Us</h1>
+    <h4>We'd love to work with you.</h4>
+  </div>
+
+  <div id="contact">
 
     <?php if (isset($formerror)) { ?>
       <div class="alert alert-danger"><?php echo $formerror; ?></div>
@@ -54,39 +57,18 @@ if (isset($_POST['submit'])) {
       <div class="alert alert-success"><?php echo $success; ?></div>
     <?php } ?>
 
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <form class="contact-form" role="form" action="<?php the_permalink(); ?>" method="post">
-          <div class="form-group">
-            <label for="contactName">Name*:</label>
-            <input type="text" class="form-control" id="contactName" name="contactName"
-              value="<?php echo $contactname; ?>">
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="emailAddress">Email Address*:</label>
-                <input type="email" class="form-control" id="emailAddress" name="emailAddress"
-                  value="<?php echo $emailaddress; ?>">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="companyName">Company:</label>
-                <input type="text" class="form-control" id="companyName" name="companyName"
-                  value="<?php echo $companyname; ?>">
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="visitorMessage">Message*:</label>
-            <textarea id="visitorMessage" name="visitorMessage" class="form-control" rows="3"><?php echo $visitormessage; ?></textarea>
-          </div>
-          <button class="btn btn-default btn-lg" name="submit" type="submit">Send Message</button>
-        </form>
-      </div>
-    </div>
+    <form class="contact-form" role="form" action="<?php the_permalink(); ?>" method="post">
+      <input type="text" class="sm" id="contactName" name="contactName"
+        placeholder="Name" value="<?php echo $contactname; ?>">
+      <input type="email" class="sm last" id="emailAddress" name="emailAddress"
+        placeholder="Email Address" value="<?php echo $emailaddress; ?>">
+      <input type="text" class="form-control" id="companyName" name="companyName"
+        placeholder="Company Name" value="<?php echo $companyname; ?>">
+      <textarea id="visitorMessage" name="visitorMessage" class="form-control"
+        rows="3" placeholder="Message"><?php echo $visitormessage; ?></textarea>
+      <button name="submit" type="submit">Send Message</button>
+    </form>
+
   </div>
-</div>
 
 <?php get_footer(); ?>

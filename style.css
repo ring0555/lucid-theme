@@ -15,14 +15,9 @@ A simple and modern WordPress starter theme.
 
 /*** Import Libs ***/
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
-@import url(http://fonts.googleapis.com/css?family=Abel);
 @import "dist/css/vendor.css";
 
 /*** Import Custom ***/
 
 @import "dist/css/custom.css";
-@import "assets/css/general.css";
-@import "assets/css/pages.css";
-@import "assets/css/sidebar.css";
-@import "assets/css/footer.css";
+/*@import "assets/css/pages.css"; */
