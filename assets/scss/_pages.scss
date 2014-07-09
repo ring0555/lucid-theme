@@ -1,9 +1,5 @@
 #home {
 
-  .slide {
-    border-bottom: 1px solid #ccc;
-  }
-
   .splash {
     display: none;
     text-align: center;
@@ -34,6 +30,62 @@
         border: 1px solid #7bc0c6;
         color: #7bc0c6;
       }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .splash {
+      margin-top: -80px;
+    }
+  }
+
+  .services {
+    text-align: center;
+
+    img {
+      margin-top: 10%;
+      height: 150px;
+    }
+  }
+
+  .vslide {
+    position: relative;
+  }
+
+  .vertical-control {
+    display: block;
+    width: 2em;
+    position: fixed;
+    top: 46%;
+    right: 0;
+    z-index: 99999;
+    font-size: 21px;
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  .hslide {
+    display: none;
+  }
+
+  #hslide1 {
+    display: block;
+  }
+
+  .horizontal-control {
+    text-align: center;
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    font-size: 21px;
+
+    i {
+      cursor: pointer;
+      margin-right: 15px;
     }
   }
 
@@ -102,6 +154,10 @@
       .image {
         width: 25%;
         float: left;
+
+        img {
+          max-width: 100%;
+        }
       }
 
       .description {
