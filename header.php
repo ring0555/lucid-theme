@@ -45,13 +45,16 @@
       <div class="footer">
         <ul>
           <li><a href="http://github.com/lucidstudiosco">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/github.png"></a></li>
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/github.png" alt="Lucid Studios GitHub">
+          </a></li>
           <li><a href="http://twitter.com/lucidstudiosco">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/twitter.png"></a></li>
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/twitter.png" alt="Lucid Studios Twitter">
+          </a></li>
           <li><a href="http://instagram.com/lucidstudiosco">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/instagram.png"></a></li>
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/instagram.png" alt="Lucid Studios Instagram">
+          </a></li>
           <li><a href="mailto:hello@lucidstudios.co">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/email.png"></a></li>
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/email.png" alt="Lucid Studios Email"></a></li>
         </ul>
       </div>
     </div>
