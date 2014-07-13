@@ -4,7 +4,8 @@
 
     <div id="vslide1" class="vslide active" data-num="1">
       <div class="splash">
-        <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/logo-blue.png">
+        <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/logo-blue.png"
+          alt="Lucid Studios Logo">
         <h1>We Are Lucid Studios</h1>
         <button>Learn About Us</button>
       </div>
@@ -13,20 +14,24 @@
       <h1 class="page-heading">Our Services</h1>
       <div class="services horizontal-slider">
         <div id="hslide1" class="hslide active" data-num="1">
-          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/uiux.png">
+          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/uiux.png"
+            alt="Lucid studios UI UX Design">
           <h2>UI &amp; UX Design</h2>
         </div>
         <div id="hslide2" class="hslide" data-num="2">
-          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/software.png">
-          <h2>Software Development</h2>
-        </div>
-        <div id="hslide3" class="hslide" data-num="3">
-          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/web.png">
+          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/web.png"
+            alt="Lucid Studios Web Development">
           <h2>Web Development</h2>
         </div>
-        <div id="hslide4" class="hslide" data-num="4">
-          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/mobile.png">
+        <div id="hslide3" class="hslide" data-num="3">
+          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/mobile.png"
+            alt="Lucid Studios Mobile Development">
           <h2>Mobile Development</h2>
+        </div>
+        <div id="hslide4" class="hslide" data-num="4">
+          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/software.png"
+            alt="Lucid Studios Software Development">
+          <h2>Software Development</h2>
         </div>
       </div>
       <div class="horizontal-control" data-target="services">
