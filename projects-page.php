@@ -7,7 +7,10 @@
   <div class="page-heading">
     <h1>Our Projects</h1>
     <ul class="sort">
-      <li data-sort="UI/UX">UI/UX Design</li>
+      <?php
+        $project_post_categories = get_categories( array( 'taxonomy' => 'project_category'));
+      ?>
+      <li data-sort="UI/UX Design">UI/UX Design</li>
       <li data-sort="Web Dev">Web Dev</li>
       <li data-sort="Mobile Dev">Mobile Dev</li>
       <li data-sort="Software Dev">Software Dev</li>
@@ -23,9 +26,10 @@
       <?php
         $url = get_post_meta($post->ID, "project_url", true);
         $type = get_post_meta($post->ID, "project_type", true);
-        $categories = get_categories(array('taxonomy' => 'project_category'));
+        $categories = wp_get_post_terms($post->ID, 'project_category', array("fields" => "all"));
         $categories_len = count($categories);
         $categories_str = "[";
+        $index = 0;
         foreach ($categories as $key=>$category) {
           if ($index == $categories_len - 1) {
             $category_comma = '"'.$category->name.'"]';
@@ -80,7 +84,7 @@
       var sort = $(this).data('sort');
       $('.project').each(function() {
         var categories = $(this).data('categories');
-        if ( $.inArray(sort, categories) == -1 ) {
+        if ( $.inArray(sort, categories) === -1 ) {
           $(this).hide('slow');
         } else {
           $(this).show('slow');
