@@ -38,7 +38,7 @@ function get_ID_by_slug($page_slug) {
 
 function my_custom_post_project() {
   $labels = array(
-    'name'                => _x( 'Project', 'post type general name' ),
+    'name'                => _x( 'Projects', 'post type general name' ),
     'singular_name'       => _x( 'Project', 'post type singular name' ),
     'add_new'             => _x( 'Add New', 'Projects' ),
     'add_new_item'        => __( 'Add New Project' ),
@@ -50,7 +50,7 @@ function my_custom_post_project() {
     'not_found'           => __( 'No projects found' ),
     'not_found_in_trash'  => __( 'No projects found in the Trash' ),
     'parent_item_colon'   => '',
-    'menu_name'           => 'Project',
+    'menu_name'           => 'Projects',
   );
   $args = array(
     'labels'        => $labels,
