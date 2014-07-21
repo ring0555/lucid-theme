@@ -14,14 +14,17 @@
 
     <div class="post">
       <div class="image">
-        <img src="http://placehold.it//200">
+        <?php if ( has_post_thumbnail() ) { ?>
+        <a href="<?php the_permalink(); ?>">
+        <?php the_post_thumbnail( array('200','200') ); } ?>
+        </a>
       </div>
       <div class="description">
         <div class="top">
           <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
           <h5 class="date"><?php the_time('F jS, Y'); ?></h5>
         </div>
-        <div class="summary"><?php the_content('Read Post'); ?></div>
+        <div class="summary"><?php the_content(''); ?></div>
       </div>
     </div>
 
