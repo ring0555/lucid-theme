@@ -182,31 +182,34 @@ ul.sort {
     cursor: pointer;
     margin-right: 15px; }
 
-#projects .project {
+#projects {
   width: 90%;
-  margin: 20px auto;
-  padding: 10px;
-  overflow: hidden; }
-  #projects .project .image {
-    width: 50%;
-    float: left; }
-    #projects .project .image img {
-      width: 95%;
-      text-align: center; }
-  #projects .project .details {
-    width: 50%;
-    float: left; }
-    #projects .project .details .top {
-      height: 35px; }
-      #projects .project .details .top h1.title {
-        margin: 5px 0;
-        float: left;
-        color: #7bc0c6; }
-      #projects .project .details .top .categories {
-        float: right;
-        margin: 12px 15px 0 0; }
-    #projects .project .details .type {
-      font-style: italic; }
+  margin: 0 auto; }
+  #projects .project {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    overflow: hidden; }
+    #projects .project .image {
+      width: 50%;
+      float: left; }
+      #projects .project .image img {
+        width: 95%;
+        text-align: center; }
+    #projects .project .details {
+      width: 50%;
+      float: left; }
+      #projects .project .details .top {
+        height: 35px; }
+        #projects .project .details .top h1.title {
+          margin: 5px 0;
+          float: left;
+          color: #7bc0c6; }
+        #projects .project .details .top .categories {
+          float: right;
+          margin: 12px 15px 0 0; }
+      #projects .project .details .type {
+        font-style: italic; }
 
 #journal .posts {
   width: 85%;
