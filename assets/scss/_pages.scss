@@ -192,6 +192,24 @@
 }
 
 #contact {
+
+  .alert {
+    width: 70%;
+    margin: 20px auto 0;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+
+  .alert-success {
+    color: #000;
+  }
+
+  .alert-error {
+    color: #f44;
+  }
+
   form.contact-form {
     width: 70%;
     margin: 20px auto 0;

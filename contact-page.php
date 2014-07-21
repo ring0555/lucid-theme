@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
   <div id="contact">
 
     <?php if (isset($formerror)) { ?>
-      <div class="alert alert-danger"><?php echo $formerror; ?></div>
+      <div class="alert alert-error"><?php echo $formerror; ?></div>
     <?php } else if ($success != '') { ?>
       <div class="alert alert-success"><?php echo $success; ?></div>
     <?php } ?>

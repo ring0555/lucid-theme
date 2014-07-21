@@ -234,6 +234,17 @@ ul.sort {
       #journal .posts .post .description .summary p {
         margin: 10px 0 0; }
 
+#contact .alert {
+  width: 70%;
+  margin: 20px auto 0;
+  padding: 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+#contact .alert-success {
+  color: #000; }
+#contact .alert-error {
+  color: #f44; }
 #contact form.contact-form {
   width: 70%;
   margin: 20px auto 0; }
