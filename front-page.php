@@ -40,10 +40,10 @@
       </div>
     </div>
     <div id="vslide3" class="vslide" data-num="3">
-      <h1 class="page-heading">Testimonials</h1>
+      <h1 class="page-heading">How We Work</h1>
     </div>
     <div id="vslide4" class="vslide" data-num="4">
-      test4
+      <h1 class="page-heading">Testimonials</h1>
     </div>
 
     <div class="vertical-control">
