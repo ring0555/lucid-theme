@@ -10,10 +10,11 @@
       <?php
         $project_post_categories = get_categories( array( 'taxonomy' => 'project_category'));
       ?>
-      <li data-sort="UI/UX Design">UI/UX Design</li>
-      <li data-sort="Web Dev">Web Dev</li>
-      <li data-sort="Mobile Dev">Mobile Dev</li>
-      <li data-sort="Software Dev">Software Dev</li>
+      <?php
+        foreach ( $project_post_categories as $project_category ) {
+          echo '<li data-sort="'.$project_category->slug.'">'.$project_category->name.'</li>';
+        }
+      ?>
     </ul>
   </div>
 
@@ -24,17 +25,17 @@
       <?php while ( have_posts() ) : the_post(); ?>
 
       <?php
-        $url = get_post_meta($post->ID, "project_url", true);
-        $type = get_post_meta($post->ID, "project_type", true);
-        $categories = wp_get_post_terms($post->ID, 'project_category', array("fields" => "all"));
-        $categories_len = count($categories);
+        $url = get_post_meta( $post->ID, "project_url", true );
+        $type = get_post_meta( $post->ID, "project_type", true );
+        $categories = wp_get_post_terms( $post->ID, 'project_category', array( "fields" => "all" ) );
+        $categories_len = count( $categories );
         $categories_str = "[";
         $index = 0;
-        foreach ($categories as $key=>$category) {
-          if ($index == $categories_len - 1) {
-            $category_comma = '"'.$category->name.'"]';
+        foreach ( $categories as $key=>$category ) {
+          if ( $index == $categories_len - 1 ) {
+            $category_comma = '"'.$category->slug.'"]';
           } else {
-            $category_comma = '"'.$category->name.'", ';
+            $category_comma = '"'.$category->slug.'", ';
           }
           $categories_str .= $category_comma;
           $index++;
@@ -43,7 +44,7 @@
 
       <div class="project" data-categories='<?php echo $categories_str; ?>'>
         <div class="image">
-          <?php $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') ); ?>
+          <?php $image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'thumbnail' ) ); ?>
           <img src="<?php echo $image; ?>">
         </div>
         <div class="details">
@@ -51,8 +52,8 @@
             <h1 class="title"><?php the_title(); ?></h1>
             <div class="categories">
               <?php $index = 0; ?>
-              <?php foreach ($categories as $key=>$category) {
-                if ($index == $categories_len - 1) {
+              <?php foreach ( $categories as $key=>$category ) {
+                if ( $index == $categories_len - 1 ) {
                   echo $category->name;
                 } else {
                   echo $category->name.', ';
@@ -61,13 +62,13 @@
               } ?>
             </div>
           </div>
-          <h4 class="type"><?php echo ucfirst($type); ?> Project</h4>
+          <h4 class="type"><?php echo ucfirst( $type ); ?> Project</h4>
           <div class="summary"><?php the_content(); ?></div>
           <?php if (empty($url)) { ?>
             <a class="btn btn-default btn-sm url disabled" href="#" target="_blank">
               Coming Soon</a>
           <?php } else { ?>
-            <a class="" href="http://<?php echo $url; ?>" target="_blank">
+            <a class="link" href="http://<?php echo $url; ?>" target="_blank">
               View Project</a>
           <?php } ?>
         </div>
