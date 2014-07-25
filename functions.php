@@ -89,7 +89,7 @@ function my_updated_messages( $messages ) {
 }
 add_filter( 'post_updated_messages', 'my_updated_messages' );
 
-// Project Price Meta Box
+// Project URL Meta Box
 
 add_action( 'add_meta_boxes', 'project_url_box');
 
@@ -137,7 +137,6 @@ function Project_url_box_save( $post_id ) {
   update_post_meta( $post_id, 'project_url', $project_url );
 
 }
-
 
 // Project Type Meta Box
 
