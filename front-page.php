@@ -40,10 +40,14 @@
       </div>
     </div>
     <div id="vslide3" class="vslide" data-num="3">
-      <h1 class="page-heading">How We Work</h1>
-    </div>
-    <div id="vslide4" class="vslide" data-num="4">
       <h1 class="page-heading">Testimonials</h1>
+      <div class="services horizontal-slider">
+
+      </div>
+      <div class="horizontal-control" data-target="services">
+        <i class="icon ion-chevron-left" data-move="left"></i>
+        <i class="icon ion-chevron-right" data-move="right"></i>
+      </div>
     </div>
 
     <div class="vertical-control">
