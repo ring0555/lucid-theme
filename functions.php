@@ -32,6 +32,8 @@ function get_ID_by_slug($page_slug) {
   }
 }
 
+add_filter('show_admin_bar', '__return_false');
+
 /******************************/
 /** Custom Project Functions **/
 /******************************/
@@ -221,5 +223,23 @@ function my_taxonomies_project() {
 }
 
 add_action( 'init', 'my_taxonomies_project', 0 );
+
+/*****************************/
+/*** Custom User Functions ***/
+/*****************************/
+
+function modify_contact_methods( $profile_fields ) {
+
+  // Add new fields
+  $profile_fields['companytitle'] = 'Company Title';
+  $profile_fields['phonenumber'] = 'Phone Number';
+  $profile_fields['twitter'] = 'Twitter URL';
+  $profile_fields['linkedin'] = 'LinkedIn URL';
+  $profile_fields['github'] = 'GitHub URL';
+  $profile_fields['dribbble'] = 'Dribbble URL';
+
+  return $profile_fields;
+}
+add_filter('user_contactmethods', 'modify_contact_methods');
 
 ?>
