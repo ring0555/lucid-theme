@@ -156,6 +156,21 @@ ul.sort {
   #home .services img {
     margin-top: 10%;
     height: 150px; }
+#home .testimonials {
+  text-align: center; }
+  #home .testimonials img {
+    height: 150px;
+    width: 150px;
+    border-radius: 150px; }
+  #home .testimonials p {
+    width: 80%;
+    margin: 20px auto 0;
+    padding-left: 10px;
+    border-left: 5px solid #7abfc5; }
+  #home .testimonials h3 {
+    margin: 20px 0 0; }
+  #home .testimonials h4 {
+    margin: 10px 0 0; }
 #home .vslide {
   position: relative; }
 #home .vertical-control {
@@ -170,7 +185,7 @@ ul.sort {
     cursor: pointer; }
 #home .hslide {
   display: none; }
-#home #hslide1 {
+#home .hslide1 {
   display: block; }
 #home .horizontal-control {
   text-align: center;
@@ -183,6 +198,14 @@ ul.sort {
   #home .horizontal-control i {
     cursor: pointer;
     margin-right: 15px; }
+@media screen and (max-width: 768px) {
+  #home .horizontal-control {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: 20px;
+    padding-bottom: 20px; } }
 
 #about .spiel h3 {
   text-align: center;
