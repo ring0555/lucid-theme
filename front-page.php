@@ -13,22 +13,22 @@
     <div id="vslide2" class="vslide" data-num="2">
       <h1 class="page-heading">Our Services</h1>
       <div class="services horizontal-slider">
-        <div id="hslide1" class="hslide active" data-num="1">
+        <div class="hslide hslide1 active" data-num="1">
           <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/uiux.png"
             alt="Lucid studios UI UX Design">
           <h2>UI &amp; UX Design</h2>
         </div>
-        <div id="hslide2" class="hslide" data-num="2">
+        <div class="hslide hslide2" data-num="2">
           <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/web.png"
             alt="Lucid Studios Web Development">
           <h2>Web Development</h2>
         </div>
-        <div id="hslide3" class="hslide" data-num="3">
+        <div class="hslide hslide3" data-num="3">
           <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/mobile.png"
             alt="Lucid Studios Mobile Development">
           <h2>Mobile Development</h2>
         </div>
-        <div id="hslide4" class="hslide" data-num="4">
+        <div class="hslide hslide4" data-num="4">
           <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/software.png"
             alt="Lucid Studios Software Development">
           <h2>Software Development</h2>
@@ -41,10 +41,26 @@
     </div>
     <div id="vslide3" class="vslide" data-num="3">
       <h1 class="page-heading">Testimonials</h1>
-      <div class="services horizontal-slider">
-
+      <div class="testimonials horizontal-slider">
+      <?php
+        $args = array( 'post_type' => 'testimonial');
+        $loop = new WP_Query( $args );
+        $index = 1;
+        while ( $loop->have_posts() ) : $loop->the_post();
+          $image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'thumbnail' ) );
+          $company = get_post_meta( $post->ID, "company", true );
+          $title = get_post_meta( $post->ID, "title", true );
+      ?>
+        <div class="hslide hslide<?php echo $index; ?> <?php if ( $index == 1 ) { echo $active; } ?>"
+          data-num="<?php echo $index; ?>">
+          <img class="headshot" src="<?php echo $image; ?>">
+          <p class="quote"><?php the_content(); ?></p>
+          <h3 class="name"><?php the_title(); ?></h3>
+          <h4 class="title"><?php echo $title.', '.$company; ?></h4>
+        </div>
+      <?php $index++; endwhile; ?>
       </div>
-      <div class="horizontal-control" data-target="services">
+      <div class="horizontal-control" data-target="testimonials">
         <i class="icon ion-chevron-left" data-move="left"></i>
         <i class="icon ion-chevron-right" data-move="right"></i>
       </div>
@@ -104,18 +120,18 @@
         if (move === 'left') {
           if (number !== 1) {
             nextNum = parseInt(number - 1);
-            $('.' + parent + ' #hslide' + number).removeClass('active');
-            $('.' + parent + ' #hslide' + number).hide('slow');
-            $('.' + parent + ' #hslide' + nextNum).addClass('active');
-            $('.' + parent + ' #hslide' + nextNum).show('slow');
+            $('.' + parent + ' .hslide' + number).removeClass('active');
+            $('.' + parent + ' .hslide' + number).hide('slow');
+            $('.' + parent + ' .hslide' + nextNum).addClass('active');
+            $('.' + parent + ' .hslide' + nextNum).show('slow');
           }
         } else {
           if (number !== numSlides) {
             nextNum = parseInt(number + 1);
-            $('.' + parent + ' #hslide' + number).removeClass('active');
-            $('.' + parent + ' #hslide' + number).hide('slow');
-            $('.' + parent + ' #hslide' + nextNum).addClass('active');
-            $('.' + parent + ' #hslide' + nextNum).show('slow');
+            $('.' + parent + ' .hslide' + number).removeClass('active');
+            $('.' + parent + ' .hslide' + number).hide('slow');
+            $('.' + parent + ' .hslide' + nextNum).addClass('active');
+            $('.' + parent + ' .hslide' + nextNum).show('slow');
           }
         }
       });
