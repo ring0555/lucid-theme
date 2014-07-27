@@ -95,7 +95,7 @@ add_filter( 'post_updated_messages', 'my_updated_messages' );
 
 add_action( 'add_meta_boxes', 'project_url_box');
 
-function Project_url_box() {
+function project_url_box() {
   add_meta_box(
     'project_url_box',
     __( 'Project URL', 'myplugin_textdomain' ),
@@ -223,6 +223,132 @@ function my_taxonomies_project() {
 }
 
 add_action( 'init', 'my_taxonomies_project', 0 );
+
+/*******************************/
+/*** Custom Testimonial Post ***/
+/*******************************/
+
+function my_custom_post_testimonial() {
+  $labels = array(
+    'name'                => _x( 'Testimonials', 'post type general name' ),
+    'singular_name'       => _x( 'Testimonial', 'post type singular name' ),
+    'add_new'             => _x( 'Add New', 'Testimonials' ),
+    'add_new_item'        => __( 'Add New Testimonial' ),
+    'edit_item'           => __( 'Edit Testimonial' ),
+    'new_item'            => __( 'New Testimonial' ),
+    'all_items'           => __( 'All Testimonials' ),
+    'view_item'           => __( 'View Testimonial' ),
+    'search_items'        => __( 'Search Testimonials' ),
+    'not_found'           => __( 'No Testimonials found' ),
+    'not_found_in_trash'  => __( 'No Testimonials found in the Trash' ),
+    'parent_item_colon'   => '',
+    'menu_name'           => 'Testimonials',
+  );
+  $args = array(
+    'labels'        => $labels,
+    'description'   => 'Holds our testimonials and testimonial specific data',
+    'public'        => true,
+    'menu_position' => 5,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+    'has_archive'   => true,
+  );
+  register_post_type( 'Testimonial', $args );
+}
+
+add_action( 'init', 'my_custom_post_testimonial' );
+
+// Company Box
+
+add_action( 'add_meta_boxes', 'company_box');
+
+function company_box() {
+  add_meta_box(
+    'company_box',
+    __( 'Company Name', 'myplugin_textdomain' ),
+    'company_box_content',
+    'Testimonial',
+    'side',
+    'high'
+  );
+}
+
+function company_box_content( $post ) {
+  wp_nonce_field( plugin_basename( __FILE__ ), 'company_box_content_nonce' );
+  echo '<label for="company"></label>';
+  $curr_val = get_post_meta($post->ID, 'company', true);
+  if (empty($curr_val)) {
+    echo '<input type="text" id="company" name="company" placeholder="Enter Company Name">';
+  } else {
+    echo '<input type="text" id="company" name="company" value="'.$curr_val.'">';
+  }
+}
+
+add_action( 'save_post', 'company_box_save' );
+
+function company_box_save( $post_id ) {
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+    return;
+  }
+  if ( !wp_verify_nonce( $_POST['company_box_content_nonce'], plugin_basename( __FILE__ ) ) ) {
+    return;
+  }
+  if ( 'page' == $_POST['post_type'] ) {
+    if ( !current_user_can( 'edit_page', $post_id ) ) {
+      return;
+    }
+  } else if ( !current_user_can( 'edit_post', $post_id ) ) {
+    return;
+  }
+
+  $company = $_POST['company'];
+  update_post_meta( $post_id, 'company', $company );
+}
+
+// Title Box
+
+add_action( 'add_meta_boxes', 'title_box');
+
+function title_box() {
+  add_meta_box(
+    'title_box',
+    __( 'Title Name', 'myplugin_textdomain' ),
+    'title_box_content',
+    'Testimonial',
+    'side',
+    'high'
+  );
+}
+
+function title_box_content( $post ) {
+  wp_nonce_field( plugin_basename( __FILE__ ), 'title_box_content_nonce' );
+  echo '<label for="title"></label>';
+  $curr_val = get_post_meta($post->ID, 'title', true);
+  if (empty($curr_val)) {
+    echo '<input type="text" id="title" name="title" placeholder="Enter Title">';
+  } else {
+    echo '<input type="text" id="title" name="title" value="'.$curr_val.'">';
+  }
+}
+
+add_action( 'save_post', 'title_box_save' );
+
+function title_box_save( $post_id ) {
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+    return;
+  }
+  if ( !wp_verify_nonce( $_POST['title_box_content_nonce'], plugin_basename( __FILE__ ) ) ) {
+    return;
+  }
+  if ( 'page' == $_POST['post_type'] ) {
+    if ( !current_user_can( 'edit_page', $post_id ) ) {
+      return;
+    }
+  } else if ( !current_user_can( 'edit_post', $post_id ) ) {
+    return;
+  }
+  $title = $_POST['title'];
+  update_post_meta( $post_id, 'title', $title );
+}
 
 /*****************************/
 /*** Custom User Functions ***/
