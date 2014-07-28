@@ -8,7 +8,8 @@
     <h1>Our Projects</h1>
     <ul class="sort">
       <?php
-        $project_post_categories = get_categories( array( 'taxonomy' => 'project_category'));
+        $project_post_categories = get_categories( array( 'taxonomy' => 'project_category',
+                                                          'hide_empty' => '0' ) );
       ?>
       <?php
         foreach ( $project_post_categories as $project_category ) {
