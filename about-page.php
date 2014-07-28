@@ -30,7 +30,7 @@ Template Name: About Page
     <div class="team">
       <h3>The Team</h3>
       <?php
-        $team = get_users();
+        $team = get_users( array( 'order_by' => 'ID', 'order' => 'ASC' ) );
 
         foreach ( $team as $member ) {
           $template_dir = get_template_directory_uri();
