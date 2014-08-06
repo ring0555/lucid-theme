@@ -1,58 +1,86 @@
 'use strict';
 
 var gulp = require('gulp');
-
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+var $ = require('gulp-load-plugins')();
+var del = require('del');
+var runSequence = require('run-sequence');
 
 var paths = {
-  scripts: 'assets/js/**/*',
-  styles: 'assets/scss/**/*',
+  scripts: 'assets/js/**/*.js',
   images: 'assets/img/**/*',
+  scss: 'assets/scss/**/*.scss',
+  css: 'assets/css/**/*.css',
+  php: '*.php',
+  style: 'style.css',
+  dist: 'dist/**/*',
   ionicons: 'assets/bower_components/ionicons/fonts/*',
   ioniconsCss: 'assets/bower_components/ionicons/css/ionicons.min.css'
 };
 
-gulp.task('styles', function () {
-  gulp.src(paths.styles)
-    .pipe(sass({errLogToConsole: true}))
-    .pipe(concat('custom.css'))
-    .pipe(gulp.dest('dist/css'));
+gulp.task('jshint', function() {
+  return gulp.src(paths.scripts)
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('vendor-styles', function() {
-  gulp.src(paths.ioniconsCss)
-    .pipe(sass())
-    .pipe(concat('vendor.css'))
-    .pipe(gulp.dest('dist/css'));
+gulp.task('images', function() {
+  return gulp.src(paths.images)
+    .pipe($.cache($.imagemin({
+      progressive: true,
+      interlaced: true
+    })))
+    .pipe(gulp.dest('dist/img'))
+    .pipe($.size({title: 'images'}));
+});
+
+gulp.task('fonts', function () {
+  return gulp.src(['app/fonts/**', paths.ionicons])
+    .pipe(gulp.dest('dist/fonts'))
+    .pipe($.size({title: 'fonts'}));
+});
+
+gulp.task('styles', function () {
+  return gulp.src([
+      paths.scss,
+      paths.css,
+      paths.ioniconsCss
+    ])
+    .pipe($.if('*.scss', $.sass()
+    .on('error', console.error.bind(console))
+    ))
+    .pipe($.if('*.css', $.csso()))
+    .pipe($.concat('main.css'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe($.size({title: 'styles'}));
 });
 
 gulp.task('scripts', function() {
   // Minify and copy all JavaScript
   return gulp.src(paths.scripts)
-    .pipe(uglify())
-    .pipe(concat('main.min.js'))
+    .pipe($.uglify({preserveComments: 'some'}))
+    .pipe($.concat('main.min.js'))
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('fonts', function() {
- return gulp.src(paths.ionicons)
-    .pipe(gulp.dest('dist/fonts'));
-});
-
-gulp.task('images', function() {
- return gulp.src(paths.images)
-    .pipe(gulp.dest('dist/img'));
-});
+gulp.task('clean', del.bind(null, ['.tmp', 'dist', 'build']));
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch(paths.styles, ['styles']);
-  gulp.watch(paths.ioniconsCss, ['vendor-styles']);
-  gulp.watch(paths.scripts, ['scripts']);
-  gulp.watch(paths.ionicons, ['fonts']);
+  gulp.watch(paths.css, ['styles']);
+  gulp.watch(paths.scss, ['styles']);
   gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.scripts, ['scripts']);
 });
 
-gulp.task('default', ['styles', 'vendor-styles', 'scripts', 'fonts', 'images', 'watch']);
+gulp.task('default', ['clean'], function(cb) {
+  runSequence('styles', ['jshint', 'images', 'fonts', 'scripts'], cb);
+});
+
+gulp.task('build', function() {
+  return gulp.src([
+    paths.php,
+    paths.style,
+    paths.dist
+  ])
+  .pipe(gulp.dest('build'));
+});
