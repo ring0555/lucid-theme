@@ -1,7 +1,7 @@
 <?php
 
 /******************************/
-/******* Theme Settings *******/
+/********* Theme Setup ********/
 /******************************/
 
 // Add support for featured images
@@ -10,17 +10,78 @@ add_theme_support('post-thumbnails');
 // Add support for menus
 add_theme_support( 'menus' );
 
-/*******************************/
-/********* Theme Setup *********/
-/*******************************/
-
 function register_main_menu() {
   register_nav_menu('main-menu',__( 'Main Menu' ));
 }
 add_action( 'init', 'register_main_menu' );
 
+function remove_theme_plugin_editor() {
+  remove_submenu_page( 'themes.php', 'theme-editor.php' );
+  remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
+}
+add_action( 'admin_init', 'remove_theme_plugin_editor', 102 );
+
+// Customize Login
+function custom_login_css() { ?>
+  <style>
+    body.login #login h1 a {
+      background: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/title_blue.png);
+      background-size: auto auto;
+      width: auto;
+      margin: 0;
+    }
+  </style>
+<?php
+}
+add_action( 'login_head', 'custom_login_css' );
+
+function login_logo_url() {
+  return home_url();
+}
+add_filter( 'login_headerurl', 'login_logo_url' );
+
+function login_logo_url_title() {
+  return 'WordPress Jumpstart';
+}
+add_filter( 'login_headertitle', 'login_logo_url_title' );
+
+/******************************/
+/******* Theme Security *******/
+/******************************/
+
+function remove_header_info() {
+  remove_action( 'wp_head', 'feed_links_extra', 3 );
+  remove_action( 'wp_head', 'rsd_link' );
+  remove_action( 'wp_head', 'wlwmanifest_link' );
+  remove_action( 'wp_head', 'wp_generator' );
+  remove_action( 'wp_head', 'start_post_rel_link' );
+  remove_action( 'wp_head', 'index_rel_link' );
+  remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+}
+add_action('init', 'remove_header_info');
+
+function remove_wp_ver_css_js( $src ) {
+  if ( strpos( $src, 'ver=' ) ) {
+    $src = remove_query_arg( 'ver', $src );
+  }
+  return $src;
+}
+add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 );
+add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 );
+
+/****************************/
+/** Theme Styles & Scripts **/
+/****************************/
+
+function load_styles_scripts() {
+  wp_enqueue_style( 'vendor-css', get_template_directory_uri() . '/assets/dist/css/main.css' );
+  wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/dist/js/main.min.js' );
+}
+add_action( 'wp_enqueue_scripts', 'load_styles_scripts' );
+
 /*******************************/
-/** Various Utility Functions **/
+/****** Utility Functions ******/
 /*******************************/
 
 function get_ID_by_slug($page_slug) {
@@ -31,7 +92,6 @@ function get_ID_by_slug($page_slug) {
     return null;
   }
 }
-
 add_filter('show_admin_bar', '__return_false');
 
 /******************************/
