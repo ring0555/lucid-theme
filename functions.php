@@ -25,8 +25,9 @@ add_action( 'admin_init', 'remove_theme_plugin_editor', 102 );
 function custom_login_css() { ?>
   <style>
     body.login #login h1 a {
-      background: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/title_blue.png);
+      background: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/img/login.png);
       background-size: auto auto;
+      background-repeat: no-repeat;
       width: auto;
       margin: 0;
     }
