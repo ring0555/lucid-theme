@@ -9,10 +9,10 @@
     <ul class="sort">
       <li data-sort='all'>All</li>
       <?php
-        $project_post_categories = get_categories( array( 'taxonomy' => 'project_category',
+        $work_post_categories = get_categories( array( 'taxonomy' => 'work_category',
                                                           'hide_empty' => '0' ) );
-        foreach ( $project_post_categories as $project_category ) {
-          echo '<li data-sort="'.$project_category->slug.'">'.$project_category->name.'</li>';
+        foreach ( $work_post_categories as $work_category ) {
+          echo '<li data-sort="'.$work_category->slug.'">'.$work_category->name.'</li>';
         }
       ?>
     </ul>
@@ -21,13 +21,12 @@
   <div id="projects">
 
     <?php if (have_posts()) : ?>
-      <?php query_posts('post_type=project'); ?>
+      <?php query_posts('post_type=work'); ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
       <?php
-        $url = get_post_meta( $post->ID, "project_url", true );
-        $type = get_post_meta( $post->ID, "project_type", true );
-        $categories = wp_get_post_terms( $post->ID, 'project_category', array( "fields" => "all" ) );
+        $url = get_post_meta( $post->ID, "work_url", true );
+        $categories = wp_get_post_terms( $post->ID, 'work_category', array( "fields" => "all" ) );
         $categories_len = count( $categories );
         $categories_str = "[";
         $index = 0;
@@ -62,11 +61,9 @@
               } ?>
             </div>
           </div>
-          <h4 class="type"><?php echo ucfirst( $type ); ?> Project</h4>
-          <div class="summary"><?php the_content(); ?></div>
+          <div class="summary"><?php the_excerpt(); ?></div>
           <?php if ( empty( $url ) ) { ?>
-            <a class="link disabled project-url" href="#" target="_blank">
-              Coming Soon</a>
+            <a class="link disabled project-url" href="#">Coming Soon</a>
           <?php } else { ?>
             <a class="link project-url" href="http://<?php echo $url; ?>" target="_blank">
               View Project</a>
