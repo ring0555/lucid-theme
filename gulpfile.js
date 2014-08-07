@@ -45,11 +45,10 @@ gulp.task('styles', function () {
       paths.css,
       paths.ioniconsCss
     ])
-    .pipe($.if('*.scss', $.sass()
+    .pipe($.if('*.scss', $.sass({errLogToConsole: true})
     .on('error', console.error.bind(console))
     ))
     .pipe($.if('*.css', $.csso()))
-    .pipe($.concat('main.css'))
     .pipe(gulp.dest('dist/css'))
     .pipe($.size({title: 'styles'}));
 });
@@ -73,7 +72,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['clean'], function(cb) {
-  runSequence('styles', ['jshint', 'images', 'fonts', 'scripts'], cb);
+  runSequence('styles', ['jshint', 'images', 'fonts', 'scripts', 'watch'], cb);
 });
 
 gulp.task('build', function() {
