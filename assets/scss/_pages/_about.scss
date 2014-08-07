@@ -1,0 +1,100 @@
+#about {
+  .spiel {
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    p {
+      width: 90%;
+      margin: 0 auto 20px;
+      text-align: center;
+      font-size: 17px;
+    }
+  }
+
+  .work {
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+
+  .team {
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .member {
+
+      img.avatar {
+        width: 80%;
+        height: auto;
+        border-radius: 15px;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+      }
+
+      h4.name {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin: 10px 0 0;
+      }
+
+      h4.title {
+        margin: 5px 0 0;
+      }
+
+      h4.email {
+        margin: 5px 0 0;
+
+        a {
+          color: #999;
+
+          &:hover, &:focus {
+            color: #7bc0c6;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .links {
+        list-style-type: none;
+        margin: 15px 0 0;
+        padding: 0;
+
+        li {
+          display: inline;
+
+          img {
+            height: 24px;
+            width: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .member {
+      width: 80%;
+      margin: 20px auto 25px;
+      float: none;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .member {
+      width: 33%;
+      margin: 10px 0 20px;
+      float: left;
+      text-align: center;
+    }
+  }
+
+}

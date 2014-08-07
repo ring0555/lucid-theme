@@ -1,0 +1,47 @@
+#projects {
+
+  width: 90%;
+  margin: 0 auto;
+
+  .project {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    overflow: hidden;
+
+    .image {
+      width: 50%;
+      float: left;
+
+      img {
+        width: 95%;
+        text-align: center;
+      }
+    }
+
+    .details {
+      width: 50%;
+      float: left;
+
+      .top {
+        height: 35px;
+
+        h1.title {
+          margin: 5px 0;
+          float: left;
+          color: #7bc0c6;
+        }
+
+        .categories {
+          float: right;
+          margin: 12px 15px 0 0;
+        }
+      }
+
+      .type {
+        font-style: italic;
+      }
+    }
+  }
+
+}
