@@ -103,95 +103,87 @@ function get_ID_by_slug( $page_slug ) {
 /** Custom Project Functions **/
 /******************************/
 
-function my_custom_post_project() {
+function my_custom_post_work() {
   $labels = array(
-    'name'                => _x( 'Projects', 'post type general name' ),
-    'singular_name'       => _x( 'Project', 'post type singular name' ),
-    'add_new'             => _x( 'Add New', 'Projects' ),
-    'add_new_item'        => __( 'Add New Project' ),
-    'edit_item'           => __( 'Edit Project' ),
-    'new_item'            => __( 'New Project' ),
-    'all_items'           => __( 'All Projects' ),
-    'view_item'           => __( 'View Project' ),
-    'search_items'        => __( 'Search Projects' ),
-    'not_found'           => __( 'No projects found' ),
-    'not_found_in_trash'  => __( 'No projects found in the Trash' ),
+    'name'                => _x( 'Works', 'post type general name' ),
+    'singular_name'       => _x( 'Work', 'post type singular name' ),
+    'add_new'             => _x( 'Add New', 'Works' ),
+    'add_new_item'        => __( 'Add New Work' ),
+    'edit_item'           => __( 'Edit Work' ),
+    'new_item'            => __( 'New Work' ),
+    'all_items'           => __( 'All Works' ),
+    'view_item'           => __( 'View Work' ),
+    'search_items'        => __( 'Search Works' ),
+    'not_found'           => __( 'No works found' ),
+    'not_found_in_trash'  => __( 'No works found in the Trash' ),
     'parent_item_colon'   => '',
-    'menu_name'           => 'Projects',
+    'menu_name'           => 'Works',
   );
   $args = array(
     'labels'        => $labels,
-    'description'   => 'Holds our projects and project specific data',
+    'description'   => 'Holds our works and work specific data',
     'public'        => true,
     'menu_position' => 5,
     'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt'),
     'has_archive'   => true,
   );
-  register_post_type( 'Project', $args );
+  register_post_type( 'work', $args );
 }
-
-add_action( 'init', 'my_custom_post_project' );
+add_action( 'init', 'my_custom_post_work' );
 
 // Update Messages
-
 function my_updated_messages( $messages ) {
   global $post, $post_ID;
-  $messages['Project'] = array(
+  $messages['work'] = array(
     0 => '',
-    1 => sprintf( __('Project updated. <a href="%s">View Project</a>'), esc_url( get_permalink($post_ID) ) ),
+    1 => sprintf( __('Work updated. <a href="%s">View Work</a>'), esc_url( get_permalink($post_ID) ) ),
     2 => __('Custom field updated.'),
     3 => __('Custom field deleted.'),
-    4 => __('Project updated.'),
-    5 => isset($_GET['revision']) ? sprintf( __('Project restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-    6 => sprintf( __('Project published. <a href="%s">View Project</a>'), esc_url( get_permalink($post_ID) ) ),
-    7 => __('Project saved.'),
-    8 => sprintf( __('Project submitted. <a target="_blank" href="%s">Preview Project</a>'),
+    4 => __('Work updated.'),
+    5 => isset($_GET['revision']) ? sprintf( __('Work restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    6 => sprintf( __('Work published. <a href="%s">View work</a>'), esc_url( get_permalink($post_ID) ) ),
+    7 => __('Work saved.'),
+    8 => sprintf( __('Work submitted. <a target="_blank" href="%s">Preview work</a>'),
                      esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-    9 => sprintf( __('Project scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Project</a>'),
+    9 => sprintf( __('Work scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview work</a>'),
                      date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-    0 => sprintf( __('Project draft updated. <a target="_blank" href="%s">Preview Project</a>'),
+    0 => sprintf( __('Work draft updated. <a target="_blank" href="%s">Preview work</a>'),
                      esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
   );
   return $messages;
 }
 add_filter( 'post_updated_messages', 'my_updated_messages' );
 
-// Project URL Meta Box
-
-add_action( 'add_meta_boxes', 'project_url_box');
-
-function project_url_box() {
+// Work URL Meta Box
+add_action( 'add_meta_boxes', 'work_url_box');
+function work_url_box() {
   add_meta_box(
-    'project_url_box',
-    __( 'Project URL', 'myplugin_textdomain' ),
-    'project_url_box_content',
-    'Project',
+    'work_url_box',
+    __( 'Work URL', 'myplugin_textdomain' ),
+    'work_url_box_content',
+    'work',
     'side',
     'high'
   );
 }
 
-function project_url_box_content( $post ) {
-  wp_nonce_field( plugin_basename( __FILE__ ), 'project_url_box_content_nonce' );
-  echo '<label for="project_url"></label>';
-  $curr_val = get_post_meta($post->ID, 'project_url', true);
-  if (empty($curr_val)) {
-    echo '<input type="text" id="project_url" name="project_url" placeholder="Enter URL" />';
+function work_url_box_content( $post ) {
+  wp_nonce_field( plugin_basename( __FILE__ ), 'work_url_box_content_nonce' );
+  echo '<label for="work_url"></label>';
+  $curr_val = get_post_meta( $post->ID, 'work_url', true );
+  if ( empty( $curr_val ) ) {
+    echo '<input type="text" id="work_url" name="work_url" placeholder="Enter URL" style="width:100%;">';
   } else {
-    echo '<input type="text" id="project_url" name="project_url" value="'.$curr_val.'" />';
+    echo '<input type="text" id="work_url" name="work_url" value="'.$curr_val.' style="width:100%;">';
   }
 }
+add_action( 'save_post', 'work_url_box_save' );
 
-add_action( 'save_post', 'project_url_box_save' );
-
-function Project_url_box_save( $post_id ) {
-
+function work_url_box_save( $post_id ) {
   if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
     return;
-
-  if ( !wp_verify_nonce( $_POST['project_url_box_content_nonce'], plugin_basename( __FILE__ ) ) )
+  if ( !wp_verify_nonce( $_POST['work_url_box_content_nonce'], plugin_basename( __FILE__ ) ) )
     return;
-
   if ( 'page' == $_POST['post_type'] ) {
     if ( !current_user_can( 'edit_page', $post_id ) )
     return;
@@ -199,95 +191,32 @@ function Project_url_box_save( $post_id ) {
     if ( !current_user_can( 'edit_post', $post_id ) )
     return;
   }
-
-  $project_url = $_POST['project_url'];
-  update_post_meta( $post_id, 'project_url', $project_url );
-
+  $work_url = $_POST['work_url'];
+  update_post_meta( $post_id, 'work_url', $work_url );
 }
 
-// Project Type Meta Box
-
-add_action( 'add_meta_boxes', 'project_type_box');
-
-function project_type_box() {
-  add_meta_box(
-    'project_type_box',
-    __( 'Project Type', 'myplugin_textdomain' ),
-    'project_type_box_content',
-    'Project',
-    'side',
-    'high'
-  );
-}
-
-function project_type_box_content( $post ) {
-  wp_nonce_field( plugin_basename( __FILE__ ), 'project_type_box_content_nonce' );
-  echo '<label for="project_type"></label>';
-  echo '<select id="project_type" name="project_type">';
-  $curr_val = get_post_meta($post->ID, 'project_type', true);
-  if (empty($curr_val)) {
-    echo '<option value="client">Client</option>';
-    echo '<option value="company">Company</option>';
-  } else if ($curr_val == 'client') {
-    echo '<option selected="selected" value="client">Client</option>';
-    echo '<option value="company">Company</option>';
-  } else {
-    echo '<option value="client">Client</option>';
-    echo '<option selected="selected" value="company">Company</option>';
-  }
-  echo '</select>';
-}
-
-add_action( 'save_post', 'project_type_box_save' );
-
-function project_type_box_save( $post_id ) {
-
-  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-    return;
-
-  if ( !wp_verify_nonce( $_POST['project_type_box_content_nonce'], plugin_basename( __FILE__ ) ) )
-    return;
-
-  if ( 'page' == $_POST['post_type'] ) {
-    if ( !current_user_can( 'edit_page', $post_id ) )
-    return;
-  } else {
-    if ( !current_user_can( 'edit_post', $post_id ) )
-    return;
-  }
-
-  $project_type = $_POST['project_type'];
-  $cleaned_project_type = str_replace( "<br>", "", $project_type);
-  update_post_meta( $post_id, 'project_type', $cleaned_project_type );
-
-}
-
-// Project Categories
-
-function my_taxonomies_project() {
+// Work Categories
+function my_taxonomies_work() {
   $labels = array(
-    'name'              => _x( 'Project Categories', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Project Category', 'taxonomy singular name' ),
-    'search_items'      => __( 'Search Project Categories' ),
-    'all_items'         => __( 'All Project Categories' ),
-    'parent_item'       => __( 'Parent Project Category' ),
-    'parent_item_colon' => __( 'Parent Project Category:' ),
-    'edit_item'         => __( 'Edit Project Category' ),
-    'update_item'       => __( 'Update Project Category' ),
-    'add_new_item'      => __( 'Add New Project Category' ),
-    'new_item_name'     => __( 'New Project Category' ),
-    'menu_name'         => __( 'Project Categories' )
+    'name'              => _x( 'Work Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Work Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Work Categories' ),
+    'all_items'         => __( 'All Work Categories' ),
+    'parent_item'       => __( 'Parent Work Category' ),
+    'parent_item_colon' => __( 'Parent Work Category:' ),
+    'edit_item'         => __( 'Edit Work Category' ),
+    'update_item'       => __( 'Update Work Category' ),
+    'add_new_item'      => __( 'Add New Work Category' ),
+    'new_item_name'     => __( 'New Work Category' ),
+    'menu_name'         => __( 'Work Categories' )
   );
-
   $args = array(
     'labels' => $labels,
     'hierarchical' => true
   );
-
-  register_taxonomy( 'project_category', 'project', $args );
+  register_taxonomy( 'Work_category', 'work', $args );
 }
-
-add_action( 'init', 'my_taxonomies_project', 0 );
+add_action( 'init', 'my_taxonomies_work', 0 );
 
 /*******************************/
 /*** Custom Testimonial Post ***/
