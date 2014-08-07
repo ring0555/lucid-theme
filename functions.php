@@ -15,11 +15,15 @@ function register_main_menu() {
 }
 add_action( 'init', 'register_main_menu' );
 
+// Remove theme and plugin editor
 function remove_theme_plugin_editor() {
   remove_submenu_page( 'themes.php', 'theme-editor.php' );
   remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
 }
 add_action( 'admin_init', 'remove_theme_plugin_editor', 102 );
+
+// Don't show admin bar
+add_filter( 'show_admin_bar', '__return_false' );
 
 // Customize Login
 function custom_login_css() { ?>
@@ -76,8 +80,9 @@ add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 );
 /****************************/
 
 function load_styles_scripts() {
-  wp_enqueue_style( 'vendor-css', get_template_directory_uri() . '/assets/dist/css/main.css' );
-  wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/dist/js/main.min.js' );
+  wp_enqueue_style( 'main-css', get_template_directory_uri() . '/dist/css/main.css' );
+  wp_enqueue_style( 'ionicons-css', get_template_directory_uri() . '/dist/css/ionicons.min.css' );
+  wp_enqueue_script( 'main-js', get_template_directory_uri() . '/dist/js/main.min.js' );
 }
 add_action( 'wp_enqueue_scripts', 'load_styles_scripts' );
 
@@ -85,15 +90,14 @@ add_action( 'wp_enqueue_scripts', 'load_styles_scripts' );
 /****** Utility Functions ******/
 /*******************************/
 
-function get_ID_by_slug($page_slug) {
-  $page = get_page_by_path($page_slug);
-  if ($page) {
+function get_ID_by_slug( $page_slug ) {
+  $page = get_page_by_path( $page_slug );
+  if ( $page ) {
     return $page->ID;
   } else {
     return null;
   }
 }
-add_filter('show_admin_bar', '__return_false');
 
 /******************************/
 /** Custom Project Functions **/
