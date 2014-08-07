@@ -32,7 +32,7 @@
         $index = 0;
         foreach ( $categories as $key=>$category ) {
           if ( $index == $categories_len - 1 ) {
-            $category_comma = '"'.$category->slug.'"]';
+            $category_comma = '"'.$category->slug.'", "all"]';
           } else {
             $category_comma = '"'.$category->slug.'", ';
           }
@@ -41,7 +41,7 @@
         }
       ?>
 
-      <div class="project" data-categories='<?php echo $categories_str; ?>'>
+      <div class="project sortable" data-categories='<?php echo $categories_str; ?>'>
         <div class="image">
           <?php $image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID, 'thumbnail' ) ); ?>
           <img src="<?php echo $image; ?>">
@@ -79,21 +79,5 @@
     <?php endif; ?>
 
   </div>
-
-  <script>
-  jQuery(document).ready(function($) {
-    $('ul.sort li').click(function() {
-      var sort = $(this).data('sort');
-      $('.project').each(function() {
-        var categories = $(this).data('categories');
-        if ( $.inArray(sort, categories) === -1 ) {
-          $(this).hide('slow');
-        } else {
-          $(this).show('slow');
-        }
-      });
-    });
-  });
-  </script>
 
 <?php get_footer(); ?>
