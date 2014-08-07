@@ -31,7 +31,7 @@
           }
 
           h5 {
-            margin: 10px 5px 0 0;
+            margin: 10px 10px 0 0;
             float: right;
           }
         }
@@ -41,6 +41,19 @@
           p {
             margin: 10px 0 0;
           }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .image {
+          width: 100%;
+          float: none;
+          display: none;
+        }
+
+        .description {
+          width: 100%;
+          float: none;
         }
       }
 
