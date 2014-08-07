@@ -7,11 +7,10 @@
   <div class="page-heading">
     <h1>Our Work</h1>
     <ul class="sort">
+      <li data-sort='all'>All</li>
       <?php
         $project_post_categories = get_categories( array( 'taxonomy' => 'project_category',
                                                           'hide_empty' => '0' ) );
-      ?>
-      <?php
         foreach ( $project_post_categories as $project_category ) {
           echo '<li data-sort="'.$project_category->slug.'">'.$project_category->name.'</li>';
         }
@@ -65,13 +64,14 @@
           </div>
           <h4 class="type"><?php echo ucfirst( $type ); ?> Project</h4>
           <div class="summary"><?php the_content(); ?></div>
-          <?php if (empty($url)) { ?>
-            <a class="btn btn-default btn-sm url disabled" href="#" target="_blank">
+          <?php if ( empty( $url ) ) { ?>
+            <a class="link disabled project-url" href="#" target="_blank">
               Coming Soon</a>
           <?php } else { ?>
-            <a class="link" href="http://<?php echo $url; ?>" target="_blank">
+            <a class="link project-url" href="http://<?php echo $url; ?>" target="_blank">
               View Project</a>
           <?php } ?>
+          <a href="<?php the_permalink(); ?>" class="link case-study">Case Study</a>
         </div>
       </div>
 
