@@ -214,7 +214,7 @@ function my_taxonomies_work() {
     'labels' => $labels,
     'hierarchical' => true
   );
-  register_taxonomy( 'Work_category', 'work', $args );
+  register_taxonomy( 'work_category', 'work', $args );
 }
 add_action( 'init', 'my_taxonomies_work', 0 );
 
