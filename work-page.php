@@ -49,6 +49,7 @@
         <div class="details">
           <div class="top">
             <h1 class="title"><?php the_title(); ?></h1>
+            <!--
             <div class="categories">
               <?php $index = 0; ?>
               <?php foreach ( $categories as $key=>$category ) {
@@ -59,16 +60,18 @@
                 }
                 $index++;
               } ?>
-            </div>
+            </div> -->
           </div>
           <div class="summary"><?php the_excerpt(); ?></div>
+          <div class="links">
           <?php if ( empty( $url ) ) { ?>
             <a class="link disabled project-url" href="#">Coming Soon</a>
           <?php } else { ?>
             <a class="link project-url" href="http://<?php echo $url; ?>" target="_blank">
-              View Project</a>
+              View Work</a>
           <?php } ?>
-          <a href="<?php the_permalink(); ?>" class="link case-study">Case Study</a>
+            <a href="<?php the_permalink(); ?>" class="link case-study">Case Study</a>
+          </div>
         </div>
       </div>
 
