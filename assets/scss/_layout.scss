@@ -40,6 +40,15 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .menu {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+  }
+}
+
 .content {
   position: absolute;
   right: 0;
