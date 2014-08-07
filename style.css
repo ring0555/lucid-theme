@@ -12,11 +12,3 @@ License URI: http://opensource.org/licenses/MIT
 
 A simple and modern WordPress starter theme.
 */
-
-/*** Import Libs ***/
-
-@import "dist/css/vendor.css";
-
-/*** Import Custom ***/
-
-@import "dist/css/custom.css";
