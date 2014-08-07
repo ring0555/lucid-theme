@@ -16,8 +16,18 @@
   }
 }
 
+.mobile-footer {
+  display: none;
+}
+
 @media screen and (max-width: 992px) {
   .footer {
     display: none;
+  }
+
+  .mobile-footer {
+    display: none;
+    background-color: #7abfc5;
+    height: 60px;
   }
 }

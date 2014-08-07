@@ -34,7 +34,7 @@
     padding: 10px;
 
     img.title {
-      height: 60px;
+      max-height: 60px;
       width: auto;
       margin: 0 0 0 5%;
       float: left;
@@ -58,26 +58,19 @@
   }
 }
 
-.footer {
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+@media screen and (max-width: 400px) {
+  .navigation {
+    padding: 5px;
 
-    li {
-      display: inline;
-      padding: 0 5px;
-
-      img {
-        height: 30px;
-      }
+    img.title {
+      width: 70%;
+      height: auto;
     }
-  }
-}
 
-@media screen and (max-width: 992px) {
-  .footer {
-    display: none;
+    img.menu-icon {
+      width: 10%;
+      height: auto;
+      margin: 8px 0 0;
+    }
   }
 }
