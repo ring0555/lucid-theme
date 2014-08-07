@@ -1,0 +1,33 @@
+ul.sort {
+  text-align: center;
+  list-style-type: none;
+  margin: 35px 0;
+  padding: 0;
+
+  li {
+    display: inline;
+    padding: 0 15px;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+    color: #7bc0c6;
+    font-size: 15px;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &:hover {
+      color: #53aab2;
+    }
+  }
+}
+
+@media screen and (max-width:650px) {
+
+  ul.sort {
+
+    li {
+      display: block;
+    }
+  }
+}
