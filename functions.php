@@ -174,7 +174,7 @@ function work_url_box_content( $post ) {
   if ( empty( $curr_val ) ) {
     echo '<input type="text" id="work_url" name="work_url" placeholder="Enter URL" style="width:100%;">';
   } else {
-    echo '<input type="text" id="work_url" name="work_url" value="'.$curr_val.' style="width:100%;">';
+    echo '<input type="text" id="work_url" name="work_url" value="'.$curr_val.'" style="width:100%;">';
   }
 }
 add_action( 'save_post', 'work_url_box_save' );
