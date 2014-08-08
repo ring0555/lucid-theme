@@ -37,6 +37,8 @@
         border-radius: 15px;
         -moz-border-radius: 15px;
         -webkit-border-radius: 15px;
+        filter: gray;
+        -webkit-filter: grayscale(1);
       }
 
       h4.name {
