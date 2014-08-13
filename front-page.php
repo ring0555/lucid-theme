@@ -4,10 +4,12 @@
 
     <div id="vslide1" class="vslide active" data-num="1">
       <div class="splash">
-        <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/logo-blue.png"
-          alt="Lucid Studios Logo">
-        <h1>We Are Lucid Studios</h1>
-        <button>Learn About Us</button>
+        <div class="splash-content">
+          <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/logo-blue.png"
+            alt="Lucid Studios Logo">
+          <h1>We Are Lucid Studios</h1>
+          <button>Learn About Us</button>
+        </div>
       </div>
     </div>
     <div id="vslide2" class="vslide" data-num="2">
@@ -77,7 +79,7 @@
   <script>
     jQuery(document).ready(function($) {
 
-      $('.splash').delay(500).fadeIn(1500);
+      $('.splash').delay(500).fadeIn('1500');
 
       $(window).on('resize', function() {
         var height = $('.content').height();
