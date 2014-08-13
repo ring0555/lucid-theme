@@ -1,41 +1,56 @@
 #home {
 
   .splash {
+    position: relative;
     display: none;
     text-align: center;
-    padding-top: 15%;
 
-    img {
-      height: 140px;
-    }
+    .splash-content {
 
-    h1 {
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: 30px;
-    }
+      img {
+        height: 140px;
+      }
 
-    button {
-      border: 1px solid #999;
-      border-radius: 5px;
-      -moz-border-radius: 5px;
-      -webkit-border-radius: 5px;
-      background-color: transparent;
-      padding: 10px;
-      margin-top: 10px;
-      color: #999;
-      cursor: pointer;
+      h1 {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 30px;
+      }
 
-      &:hover, &:focus {
-        border: 1px solid #7bc0c6;
-        color: #7bc0c6;
+      button {
+        border: 1px solid #999;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        background-color: transparent;
+        padding: 10px;
+        margin-top: 10px;
+        color: #999;
+        cursor: pointer;
+
+        &:hover, &:focus {
+          border: 1px solid #7bc0c6;
+          color: #7bc0c6;
+        }
       }
     }
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (min-width: 992px) {
     .splash {
-      margin-top: -80px;
+      padding-top: 15%;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .splash {
+      padding-top: 23%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .splash {
+      padding-top: 20%;
     }
   }
 
