@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title( '|', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
-    <meta name="description" content="Developing High End Web and Mobile Applications">
+    <title><?php wp_title( '|', true, 'right' ); ?> <?php bloginfo( 'name' ); ?> | Digital Design and Development
+    <?php echo (is_front_page() ? '| Frederick, MD' : '' ); ?></title>
+    <meta name="description" content="At Lucid Studios, we pride ourselves in designing and developing high quality products
+      for the digital world. Our work includes UI/UX Design, Graphic Design, Mobile Applications, Web Applications, and
+      Software Applications.">
 
     <!-- html5.js -->
     <!--[if lt IE 9]>
