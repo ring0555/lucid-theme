@@ -25,6 +25,12 @@ add_action( 'admin_init', 'remove_theme_plugin_editor', 102 );
 // Don't show admin bar
 add_filter( 'show_admin_bar', '__return_false' );
 
+// Add excerpts for pages
+add_action( 'init', 'enable_page_excerpts' );
+function enable_page_excerpts() {
+  add_post_type_support( 'page', 'excerpt' );
+}
+
 // Customize Login
 function custom_login_css() { ?>
   <style>
@@ -97,6 +103,18 @@ function get_ID_by_slug( $page_slug ) {
   } else {
     return null;
   }
+}
+
+function get_excerpt_by_id( $post_id ) {
+  $excerpt = get_the_excerpt( $post_id );
+
+  if ( $excerpt == '' ) {
+    $final_excerpt = bloginfo( 'description' );
+  } else {
+    $final_excerpt = $excerpt;
+  }
+
+  return $final_excerpt;
 }
 
 /******************************/
