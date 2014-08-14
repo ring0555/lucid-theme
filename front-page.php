@@ -8,7 +8,7 @@
           <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/logo-blue.png"
             alt="Lucid Studios Logo">
           <h1>We Are Lucid Studios</h1>
-          <button>Learn About Us</button>
+          <a href="#" class="learn-more">Learn About Us</a>
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
         });
       }).trigger('resize');
 
-      $('button').click(function() {
+      $('a.learn-more').click(function() {
         $('#vslide1').removeClass('active');
         $('html,body').animate({scrollTop: $('#vslide2').offset().top}, 'slow');
         $('#vslide2').addClass('active');
