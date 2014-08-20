@@ -52,6 +52,9 @@
           <li><a href="http://instagram.com/lucidstudiosco">
             <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/instagram.png" alt="Lucid Studios Instagram">
           </a></li>
+          <li><a href="https://plus.google.com/+Lucidstudiosco1">
+            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/google+.png" alt="Lucid Studios Google Plus">
+          </a></li>
           <li><a href="mailto:hello@lucidstudios.co">
             <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/email.png" alt="Lucid Studios Email"></a></li>
         </ul>
