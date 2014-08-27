@@ -37,19 +37,11 @@
     ?>
 
     <div class="post sortable" data-categories='<?php echo $categories_str; ?>'>
-      <div class="image">
-        <?php if ( has_post_thumbnail() ) { ?>
-        <a href="<?php the_permalink(); ?>">
-        <?php the_post_thumbnail( array('200','200') ); } ?>
-        </a>
+      <div class="top">
+        <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+        <h5 class="date"><?php the_time('F jS, Y'); ?></h5>
       </div>
-      <div class="description">
-        <div class="top">
-          <h1 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-          <h5 class="date"><?php the_time('F jS, Y'); ?></h5>
-        </div>
-        <div class="summary"><?php the_content(''); ?></div>
-      </div>
+      <div class="summary"><?php the_content(''); ?></div>
     </div>
 
     <?php endwhile; ?>
