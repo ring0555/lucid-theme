@@ -2,7 +2,7 @@
 
   <div id="home">
 
-    <div id="vslide1" class="vslide active" data-num="1">
+    <section id="vslide1" class="vslide active" data-num="1">
       <div class="splash">
         <div class="splash-content">
           <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/logo-blue.png"
@@ -11,8 +11,8 @@
           <a href="#" class="learn-more">Learn About Us</a>
         </div>
       </div>
-    </div>
-    <div id="vslide2" class="vslide" data-num="2">
+    </section>
+    <section id="vslide2" class="vslide" data-num="2">
       <h1 class="page-heading">Our Services</h1>
       <div class="services horizontal-slider">
         <div class="hslide hslide1 active" data-num="1">
@@ -40,8 +40,8 @@
         <i class="icon ion-chevron-left" data-move="left"></i>
         <i class="icon ion-chevron-right" data-move="right"></i>
       </div>
-    </div>
-    <div id="vslide3" class="vslide" data-num="3">
+    </section>
+    <section id="vslide3" class="vslide" data-num="3">
       <h1 class="page-heading">Testimonials</h1>
       <div class="testimonials horizontal-slider">
       <?php
@@ -66,7 +66,7 @@
         <i class="icon ion-chevron-left" data-move="left"></i>
         <i class="icon ion-chevron-right" data-move="right"></i>
       </div>
-    </div>
+    </section>
 
     <div class="vertical-control">
       <i class="icon ion-chevron-up" data-move="up"></i>
@@ -137,6 +137,11 @@
           }
         }
       });
+
+      $('#home').onepage_scroll({
+        sectionContainer: 'section',
+        easing: 'ease'
+      })
 
     });
   </script>
