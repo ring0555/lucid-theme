@@ -10,11 +10,12 @@ var paths = {
   images: 'assets/img/**/*',
   scss: 'assets/scss/**/*.scss',
   css: 'assets/css/**/*.css',
+  fonts: 'assets/fonts/**/*',
   php: '*.php',
   style: 'style.css',
   dist: 'dist/**/*',
   ionicons: 'assets/bower_components/ionicons/fonts/*',
-  ioniconsCss: 'assets/bower_components/ionicons/css/ionicons.min.css'
+  ioniconsCss: 'assets/bower_components/ionicons/css/ionicons.min.css',
 };
 
 gulp.task('jshint', function() {
@@ -34,7 +35,10 @@ gulp.task('images', function() {
 });
 
 gulp.task('fonts', function () {
-  return gulp.src(['app/fonts/**', paths.ionicons])
+  return gulp.src([
+      paths.fonts,
+      paths.ionicons
+    ])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size({title: 'fonts'}));
 });
@@ -55,7 +59,9 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function() {
   // Minify and copy all JavaScript
-  return gulp.src(paths.scripts)
+  return gulp.src([
+      paths.scripts
+    ])
     .pipe($.uglify({preserveComments: 'some'}))
     .pipe($.concat('main.min.js'))
     .pipe(gulp.dest('dist/js'));
