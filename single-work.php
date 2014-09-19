@@ -2,7 +2,7 @@
 <div id="single-work">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php
-    $url = get_post_meta( $post->ID, "project_url", true );
+    $url = get_post_meta( $post->ID, "work_url", true );
   ?>
   <div class="page-heading">
     <h1><?php the_title(); ?></h1>
