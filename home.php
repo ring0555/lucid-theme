@@ -25,7 +25,8 @@
       $categories_len = count( $categories );
       $categories_str = "[";
       $index = 0;
-      foreach ( $categories as $key=>$category ) {
+      foreach ( $categories as $key=>$cat ) {
+        $category = get_category($cat);
         if ( $index == $categories_len - 1 ) {
           $category_comma = '"'.$category->slug.'", "all"]';
         } else {
