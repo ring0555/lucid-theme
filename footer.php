@@ -1,8 +1,10 @@
 
-    </div> <!-- End Content -->
+    <!--
+    </div>
     <div class="mobile-footer">
       test
     </div>
+    -->
   <?php wp_footer(); ?>
   <!-- Google Analytics -->
   <script>

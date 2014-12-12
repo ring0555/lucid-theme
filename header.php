@@ -26,6 +26,7 @@
     <?php wp_head(); ?>
   </head>
   <body>
+    <!--
     <div class="menu">
       <div class="navigation">
         <a href="<?php echo home_url(); ?>">
@@ -62,3 +63,5 @@
     </div>
 
     <div class="content">
+
+    -->

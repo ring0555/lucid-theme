@@ -1,145 +1,50 @@
-#home {
+#first {
+  height: 100%;
+  background-color: #7bc0c6;
+  position: relative;
+  color: #fff;
 
-  .splash {
-    position: relative;
-    display: none;
+  .first-pattern {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url('../img/congruent.png');
+    opacity: .5;
+  }
+
+  .first-content {
+    @include vertical-align;
     text-align: center;
 
-    .splash-content {
+    img {
+      height: 175px;
+    }
 
-      img {
-        height: 140px;
-      }
+    h1 {
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
 
-      h1 {
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: 30px;
-      }
+    .social {
+      list-style-type: none;
+      margin: 10px 0 20px;
+      padding: 0;
 
-      a {
-        border: 1px solid #999;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        background-color: transparent;
-        padding: 10px;
-        margin-top: 10px;
-        color: #999;
-        cursor: pointer;
-        text-decoration: none;
+      li {
+        display: inline-block;
+        padding: 0 5px;
 
-        &:hover, &:focus {
-          border: 1px solid #7bc0c6;
-          color: #7bc0c6;
-          text-decoration: none;
+        i {
+          color: #fff;
+          font-size: 25px;
         }
       }
     }
-  }
 
-  @media screen and (min-width: 992px) {
-    .splash {
-      padding-top: 15%;
+    a.email {
+      color: #fff;
     }
   }
-
-  @media screen and (min-width: 768px) and (max-width: 992px) {
-    .splash {
-      padding-top: 23%;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .splash {
-      padding-top: 20%;
-    }
-  }
-
-  .services {
-    text-align: center;
-
-    img {
-      margin-top: 10%;
-      height: 150px;
-    }
-  }
-
-  .testimonials {
-    text-align: center;
-
-    img {
-      height: 150px;
-      width: 150px;
-      border-radius: 150px;
-    }
-
-    p {
-      width: 80%;
-      margin: 20px auto 0;
-      padding-left: 10px;
-      border-left: 5px solid #7abfc5;
-    }
-
-    h3 {
-      margin: 20px 0 0;
-    }
-
-    h4 {
-      margin: 10px 0 0;
-    }
-  }
-
-  .vslide {
-    position: relative;
-  }
-
-  .vertical-control {
-    display: block;
-    width: 2em;
-    position: fixed;
-    top: 46%;
-    right: 0;
-    z-index: 99999;
-    font-size: 21px;
-
-    i {
-      cursor: pointer;
-    }
-  }
-
-  .hslide {
-    display: none;
-  }
-
-  .hslide1 {
-    display: block;
-  }
-
-  .horizontal-control {
-    text-align: center;
-    display: block;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    font-size: 21px;
-
-    i {
-      cursor: pointer;
-      margin-right: 15px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .horizontal-control {
-      position: relative;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      margin-top: 20px;
-      padding-bottom: 20px;
-    }
-  }
-
 }
