@@ -26,42 +26,32 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <!--
-    <div class="menu">
+    <header class="menu">
       <div class="navigation">
         <a href="<?php echo home_url(); ?>">
           <img class="title" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/title-white.png"
             alt="Lucid Studios Logo">
         </a>
+        <!--
         <img class="menu-icon" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/menu.png"
           alt="Menu Icon">
+        -->
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!--
         <ul>
           <?php if ( has_nav_menu( 'main-menu' ) ) { ?>
           <?php wp_nav_menu( array( 'theme-location' => 'main-menu', 'container' => 'False',
             'items_wrap' => '%3$s' ) ); ?>
           <?php } ?>
         </ul>
+        -->
       </div>
-      <div class="footer">
-        <ul>
-          <li><a href="http://github.com/lucidstudiosco">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/github.png" alt="Lucid Studios GitHub">
-          </a></li>
-          <li><a href="http://twitter.com/lucidstudiosco">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/twitter.png" alt="Lucid Studios Twitter">
-          </a></li>
-          <li><a href="http://instagram.com/lucidstudiosco">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/instagram.png" alt="Lucid Studios Instagram">
-          </a></li>
-          <li><a href="https://facebook.com/lucidstudiosco">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/facebook.png" alt="Lucid Studios Facebook">
-          </a></li>
-          <li><a href="mailto:hello@lucidstudios.co">
-            <img src="<?php bloginfo( 'template_directory' ); ?>/dist/img/email.png" alt="Lucid Studios Email"></a></li>
-        </ul>
-      </div>
-    </div>
+    </header>
 
     <div class="content">
-
-    -->

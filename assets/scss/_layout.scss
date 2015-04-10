@@ -4,6 +4,7 @@ html, body {
   font-family: "adelle-sans", sans-serif;
   font-weight: 300;
   color: #999;
+  background-color: #fff;
 }
 
 h1,h2,h3,h4,h5,h5,h6,
@@ -20,4 +21,8 @@ a {
 a:hover {
   color: #53aab2;
   text-decoration: underline;
+}
+
+.content {
+  height: 100%;
 }

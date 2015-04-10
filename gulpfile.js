@@ -26,10 +26,6 @@ gulp.task('jshint', function() {
 
 gulp.task('images', function() {
   return gulp.src(paths.images)
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
     .pipe(gulp.dest('dist/img'))
     .pipe($.size({title: 'images'}));
 });
@@ -53,8 +49,7 @@ gulp.task('styles', function () {
     .on('error', console.error.bind(console))
     ))
     .pipe($.if('*.css', $.csso()))
-    .pipe(gulp.dest('dist/css'))
-    .pipe($.size({title: 'styles'}));
+    .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('scripts', function() {

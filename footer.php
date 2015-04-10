@@ -1,10 +1,17 @@
 
-    <!--
-    </div>
-    <div class="mobile-footer">
-      test
-    </div>
-    -->
+    <footer class="footer">
+      <ul>
+        <li><a href="mailto:hello@lucidstudios.co">Email</a></li>
+        <li><a href="https://twitter.com/lucidstudiosco">Twitter</a></li>
+        <li><a href="https://instagram.com/lucidstudiosco">Instagram</a></li>
+        <li><a href="https://github.com/LucidStudiosCo">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+      <div class="copyright">
+        &copy; 2015 Lucid Studios, LLC
+      </div>
+    </footer>
+  </div>
   <?php wp_footer(); ?>
   <!-- Google Analytics -->
   <script>
