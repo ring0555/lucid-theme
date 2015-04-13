@@ -146,9 +146,7 @@
     </div>
     <div class="input-group">
       <label>Project Description:</label>
-      <textarea name="description" rows="5" placeholder="Pied Piper is a multi-platform technology based
-        on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores">
-      </textarea>
+      <textarea name="description" rows="5" placeholder="Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores."></textarea>
     </div>
     <button type="submit" name="submit">Send Message</button>
   </form>
