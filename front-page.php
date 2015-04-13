@@ -11,18 +11,12 @@
 
 <section id="about" class="section section__about">
   <h1>Welcome to Lucid Studios</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam maximus sapien
-  eu mattis viverra. Aenean at ultrices nibh, id elementum ipsum. Morbi tristique
-  elit tortor, sed venenatis nisi pretium ac. Nulla et nisi dictum, vulputate justo
-  sed, feugiat diam. Donec et consectetur tellus, quis iaculis libero. Cras orci mi,
-  cursus ac odio pharetra, tristique tincidunt mauris. Ut elit ligula, ullamcorper
-  a malesuada non, venenatis luctus ante. Quisque suscipit leo vitae aliquam consequat.</p>
-
-  <p>Nam varius ipsum eu urna pharetra, eu interdum sapien lobortis. Duis ac sagittis libero.
-  Cras imperdiet, nisl placerat sodales facilisis, arcu libero feugiat ipsum, at viverra
-  velit nibh sit amet neque. Morbi vestibulum, turpis vitae mollis interdum, libero dolor
-  pulvinar dui, vitae elementum dolor nibh at sapien. Cras vel eros id quam blandit
-  fermentum. Donec cursus justo sit amet lacus finibus ullamcorper.</p>
+  <p>At Lucid Studios, we work with a wide variety of clientelle including non-profits,
+    enterprises, and start-ups to develop digital products to improve their business. We focus
+    on creating simple, clear, and intuitive interfaces and fast, scalable, and reliable backend
+    applications. We walk you through every step of the development process, from idea stage to
+    deployment and maintenance, meticulously tailoring every detail of the project to your
+    individual needs.</p>
 </section>
 
 <section id="services" class="section section__services">
@@ -77,8 +71,9 @@
     <img src="<?php echo $image; ?>">
     <figcaption>
       <h2><?php the_title(); ?></h2>
-      <?php the_excerpt(); ?>
-      <a href="<?php the_permalink(); ?>"></a>
+      <p>View Project</p>
+      <!--<a href="<?php the_permalink(); ?>"></a>-->
+      <a href="#"></a>
     </figcaption>
   </figure>
   <?php
@@ -103,7 +98,7 @@
     <p class="summary"><?php echo $recent->post_excerpt; ?></p>
   </div>
   <?php } ?>
-  <a class="view-more" href="<?php echo bloginfo( 'url' ); ?>/journal/">View More Posts</a>
+  <!--<a class="view-more" href="<?php echo bloginfo( 'url' ); ?>/journal/">View More Posts</a>-->
 </section>
 
 <?php

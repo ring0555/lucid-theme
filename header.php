@@ -37,11 +37,11 @@
           alt="Menu Icon">
         -->
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#journal">Journal</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="<?php bloginfo( 'url' ); ?>#about">About</a></li>
+          <li><a href="<?php bloginfo( 'url' ); ?>#services">Services</a></li>
+          <li><a href="<?php bloginfo( 'url' ); ?>#work">Work</a></li>
+          <li><a href="<?php bloginfo( 'url' ); ?>#journal">Journal</a></li>
+          <li><a href="<?php bloginfo( 'url' ); ?>#contact">Contact</a></li>
         </ul>
         <!--
         <ul>
