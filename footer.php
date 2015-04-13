@@ -5,7 +5,7 @@
         <li><a href="https://twitter.com/lucidstudiosco">Twitter</a></li>
         <li><a href="https://instagram.com/lucidstudiosco">Instagram</a></li>
         <li><a href="https://github.com/LucidStudiosCo">GitHub</a></li>
-        <li><a href="#">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/company/lucid-studios-llc">LinkedIn</a></li>
       </ul>
       <div class="copyright">
         &copy; 2015 Lucid Studios, LLC
