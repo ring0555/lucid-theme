@@ -4,7 +4,7 @@
   <div class="overlay"></div>
   <div class="section__inner">
     <h1>Digital Design and Development</h1>
-    <p>We Craft Amazing Digital Experiences For The Web and Mobile.</p>
+    <p>We Craft Digital Experiences For The Web and Mobile.</p>
   </div>
   <a href="#about"><i class="icon ion-chevron-down"></i></a>
 </section>
@@ -106,10 +106,64 @@
   <a class="view-more" href="<?php echo bloginfo( 'url' ); ?>/journal/">View More Posts</a>
 </section>
 
+<?php
+  if (isset($_POST['submit'])) {
+
+    $contactname = trim($_POST['full_name']);
+    $emailaddress = trim($_POST['email_address']);
+    $companyname = trim($_POST['company_name']);
+    $service = trim($_POST['service']);
+    $budget = trim($_POST['budget']);
+    $description = trim($_POST['description']);
+
+    if ($contactname == '') {
+      $formerror = 'Please Enter Name';
+    } else if ($emailaddress == '') {
+      $formerror = 'Please Enter Email';
+    } else if ($description == '') {
+      $formerror = 'Please Enter Project Description';
+    } else {
+      if (empty($_POST)) {
+        $formerror = 'Error Submiting Form';
+      } else {
+        $to = "nathan@lucidstudios.co";
+        $subject = 'Lucid Studios Visitor Message';
+        $body = 'Name: '.$contactname."\r\n";
+        $body .= 'Email: '.$emailaddress."\r\n";
+        $body .= 'Company: '.$companyname."\r\n";
+        $body .= 'Service: '.$service."\r\n";
+        $body .= 'Budget: '.$budget."\r\n";
+        $body .= "\r\n";
+        $body .= $description;
+
+        $sent = wp_mail($to, $subject, $body, $headers);
+
+        if ($sent) {
+          $success = 'Your Message Has Been Sent! We Will Contact You Shortly';
+        } else {
+          $formerror = 'An Error Has Occured. Please Try Again.';
+        }
+      }
+    }
+  } else {
+    $contactname = '';
+    $emailaddress = '';
+    $companyname = '';
+    $service = '';
+    $budget = '';
+    $description = '';
+  }
+?>
+
 <section id="contact" class="section section__contact">
   <h1>Contact Us</h1>
   <p>Please Fill Out The Form Below and We Will Get Back To You Within 48 Hours!</p>
-  <form class="form" method="post" action="">
+  <?php if (isset($formerror)) { ?>
+    <div class="alert alert__error"><?php echo $formerror; ?></div>
+  <?php } else if (isset($success)) { ?>
+    <div class="alert alert__success"><?php echo $success; ?></div>
+  <?php } ?>
+  <form class="form" method="post" action="#contact">
     <div class="input-group">
       <label>Full Name:</label>
       <input type="text" name="full_name" placeholder="Richard Hendriks">
@@ -138,7 +192,7 @@
       <select name="budget">
         <option value="$3,000-$5,000">$3,000 - $5,000</option>
         <option value="$5,000-$7,500">$5,000 - $7,500</option>
-        <option value="$7,500-$10,000">$7,500 - $10,000</option>
+        <option value="$7,500-$10,000" selected>$7,500 - $10,000</option>
         <option value="$10,000-$15,000">$10,000 - $15,000</option>
         <option value="$15,000-$30,000">$15,000 - $30,000</option>
         <option value="$30,000+">$30,000+</option>
