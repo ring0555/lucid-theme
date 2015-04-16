@@ -14,8 +14,8 @@ var paths = {
   php: '*.php',
   style: 'style.css',
   dist: 'dist/**/*',
-  ionicons: 'assets/bower_components/ionicons/fonts/*',
-  ioniconsCss: 'assets/bower_components/ionicons/css/ionicons.min.css',
+  ionicons: 'assets/components/ionicons/fonts/*',
+  ioniconsCss: 'assets/components/ionicons/css/ionicons.min.css',
 };
 
 gulp.task('jshint', function() {
