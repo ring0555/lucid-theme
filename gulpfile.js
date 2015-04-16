@@ -41,14 +41,15 @@ gulp.task('fonts', function () {
 
 gulp.task('styles', function () {
   return gulp.src([
+      paths.ioniconsCss,
       paths.scss,
-      paths.css,
-      paths.ioniconsCss
+      paths.css
     ])
     .pipe($.if('*.scss', $.sass({errLogToConsole: true})
     .on('error', console.error.bind(console))
     ))
     .pipe($.if('*.css', $.csso()))
+    .pipe($.concat('app.css'))
     .pipe(gulp.dest('dist/css'));
 });
 
@@ -58,7 +59,7 @@ gulp.task('scripts', function() {
       paths.scripts
     ])
     .pipe($.uglify({preserveComments: 'some'}))
-    .pipe($.concat('main.min.js'))
+    .pipe($.concat('app.min.js'))
     .pipe(gulp.dest('dist/js'));
 });
 

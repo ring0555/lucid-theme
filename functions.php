@@ -86,9 +86,8 @@ add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 );
 /****************************/
 
 function load_styles_scripts() {
-  wp_enqueue_style( 'main-css', get_template_directory_uri() . '/dist/css/app.css' );
-  wp_enqueue_style( 'ionicons-css', get_template_directory_uri() . '/dist/css/ionicons.min.css' );
-  wp_enqueue_script( 'main-js', get_template_directory_uri() . '/dist/js/main.min.js' );
+  wp_enqueue_style( 'app-css', get_template_directory_uri() . '/dist/css/app.css' );
+  wp_enqueue_script( 'app-js', get_template_directory_uri() . '/dist/js/app.min.js' );
 }
 add_action( 'wp_enqueue_scripts', 'load_styles_scripts' );
 
