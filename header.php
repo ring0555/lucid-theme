@@ -40,7 +40,6 @@
           <li><a href="<?php bloginfo( 'url' ); ?>#about">About</a></li>
           <li><a href="<?php bloginfo( 'url' ); ?>#services">Services</a></li>
           <li><a href="<?php bloginfo( 'url' ); ?>#work">Work</a></li>
-          <li><a href="<?php bloginfo( 'url' ); ?>#journal">Journal</a></li>
           <li><a href="<?php bloginfo( 'url' ); ?>#contact">Contact</a></li>
         </ul>
         <!--

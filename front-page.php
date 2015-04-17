@@ -71,9 +71,8 @@
     <img src="<?php echo $image; ?>">
     <figcaption>
       <h2><?php the_title(); ?></h2>
-      <p>View Project</p>
       <!--<a href="<?php the_permalink(); ?>"></a>-->
-      <a href="#"></a>
+      <a href="<?php echo get_post_meta( $post->ID, "work_url", true ); ?>" target="_blank"></a>
     </figcaption>
   </figure>
   <?php
@@ -81,24 +80,6 @@
     endif;
     wp_reset_query();
   ?>
-</section>
-
-<section class="section section__journal">
-  <h1>The Journal</h1>
-  <?php
-    $args = array(
-      'numberposts' => 3
-    );
-    $recent_posts = get_posts($args);
-  ?>
-  <?php foreach( $recent_posts as $recent ) { ?>
-  <div class="post">
-    <h2 class="title"><a href="<?php echo get_permalink($recent->ID); ?>"><?php echo $recent->post_title; ?></a></h2>
-    <h5 class="date"><?php echo get_post_time('F jS, Y', $recent->ID); ?></h5>
-    <p class="summary"><?php echo $recent->post_excerpt; ?></p>
-  </div>
-  <?php } ?>
-  <!--<a class="view-more" href="<?php echo bloginfo( 'url' ); ?>/journal/">View More Posts</a>-->
 </section>
 
 <?php

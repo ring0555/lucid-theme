@@ -95,7 +95,7 @@
   figure {
     display: inline-block;
     width: 90%;
-    max-width: 300px;
+    max-width: 350px;
     text-align: center;
     margin: 50px 0 0;
     padding: 0;
@@ -151,14 +151,11 @@
       min-height: 100%;
       max-width: 100%;
       opacity: 0.7;
-      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-      transition: opacity 0.35s, transform 0.35s;
-      -webkit-transform: scale(1.15);
-      transform: scale(1.15);
     }
 
     figcaption {
       position: absolute;
+      display: none;
       top: 0;
       left: 0;
       width: 100%;
@@ -178,19 +175,6 @@
         transition: transform 0.35s;
         -webkit-transform: translate3d(0,20px,0);
         transform: translate3d(0,20px,0);
-      }
-
-      p {
-        margin: 1em 5% 0;
-        padding: 10px;
-        font-size: 15px;
-        border: 1px solid #fff;
-        color: #fff;
-        opacity: 0;
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        -webkit-transform: translate3d(0,20px,0) scale(1.1);
-        transform: translate3d(0,20px,0) scale(1.1);
       }
 
       a {
@@ -213,6 +197,10 @@
 
     &:hover {
 
+      figcaption {
+        display: block;
+      }
+
       img, p {
         opacity: 1;
       }
@@ -227,20 +215,13 @@
         -webkit-transform: scale(1);
         transform: scale(1);
       }
-
-      p {
-        -webkit-transition-delay: 0.05s;
-        transition-delay: 0.05s;
-        -webkit-transition-duration: 0.35s;
-        transition-duration: 0.35s;
-      }
     }
   }
 }
 
 
 .section__journal {
-  padding: 50px;
+  padding: 50px 0;
   background-color: #f6f6f6;
 
   h1 {
@@ -286,6 +267,7 @@
 
 .section__contact {
   padding: 50px 0;
+  background-color: #f6f6f6;
 
   h1 {
     margin: 0;
@@ -325,13 +307,13 @@
       background-color: #fff;
       background-image: none;
       border-style: solid;
-      border-width: 0 0 1px;
+      border-width: 1px;
       font-family: inherit;
       font-size: 14px;
       color: #333;
-      border-color: #ccc;
+      border-color: #fff;
 
-      &:hover, &:focus {
+      &:focus {
         outline: 0;
         border-color: #7bc0c6;
         box-shadow: none;
