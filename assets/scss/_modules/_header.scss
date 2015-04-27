@@ -36,4 +36,23 @@ header {
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+
+    img.title {
+      float: none;
+      display: block;
+      margin: 10px auto 15px;
+    }
+
+    ul {
+      float: none;
+      text-align: center;
+      padding: 0;
+
+      li {
+        line-height: normal;
+      }
+    }
+  }
 }

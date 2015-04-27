@@ -56,6 +56,14 @@
     font-size: 30px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 450px) {
+
+    .section__inner {
+      top: 70%;
+    }
+
+  }
 }
 
 
